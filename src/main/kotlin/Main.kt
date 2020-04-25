@@ -15,6 +15,7 @@ import io.ktor.server.netty.Netty
 
 import com.google.cloud.firestore.FirestoreOptions
 
+
 fun hello(): String {
     return "Hello, world!"
 }
@@ -27,29 +28,26 @@ data class CalculatorRequest(
     val second: Int
 )
 
-fun Application.calculator() { // Extension function for Application called adder()
+data class Student(val first_name: String, val last_name: String, val classroom_id: String, val email: String)
+
+fun Application.api() { // Extension function for Application called adder()
     install(ContentNegotiation) {
         gson { }
     }
 
     routing {
 
-        get("/firebase") {
+        // Retrieves data from a firestore request
+        get("/firestore/{collection}/{document}") {
             val db = FirestoreOptions.newBuilder()
                 .setTimestampsInSnapshotsEnabled(true)
                 .build()
                 .service
 
-            val doc_ref = db.collection("Students").document("test")
-            var data = doc_ref
-                .get()
-                .get()
-                .data
+            val col = call.parameters["collection"]!!
+            val doc = call.parameters["document"]!!
 
-            if (data == null) {
-                data = mutableMapOf<String, Any>()
-                doc_ref.set(data)
-            }
+            var data = getDocumentFromDB(col, doc, db)!!
 
             call.respond(data)
         }
@@ -97,5 +95,5 @@ fun Application.calculator() { // Extension function for Application called adde
 }
 
 fun main() {
-    embeddedServer(Netty, 8080, module = Application::calculator).start(wait = true)
+    embeddedServer(Netty, 8080, module = Application::api).start(wait = true)
 }

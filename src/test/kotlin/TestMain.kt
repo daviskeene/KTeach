@@ -9,7 +9,7 @@ import io.ktor.server.testing.withTestApplication
 
 class TestMain : StringSpec({
     "should retrieve root path properly" {
-        withTestApplication(Application::calculator) {
+        withTestApplication(Application::api) {
             handleRequest(HttpMethod.Get, "/add/1/2").apply {
                 response.status() shouldBe HttpStatusCode.OK
             }
@@ -17,7 +17,7 @@ class TestMain : StringSpec({
     }
 
     "should accept post calculate request" {
-        withTestApplication(Application::calculator) {
+        withTestApplication(Application::api) {
             handleRequest(HttpMethod.Post, "/calculate") {
                 addHeader("content-type", "application/json")
                 setBody("""
@@ -34,7 +34,7 @@ class TestMain : StringSpec({
     }
 
     "should serialize json properly" {
-        withTestApplication(Application::calculator) {
+        withTestApplication(Application::api) {
             handleRequest(HttpMethod.Post, "/calcluate") {
                 addHeader("content-type", "application/json")
                 setBody("""
