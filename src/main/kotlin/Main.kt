@@ -28,13 +28,17 @@ data class CalculatorRequest(
     val second: Int
 )
 
-data class AddStudentRequest(
+data class AddItemRequest(
     val doctype: String,
     val first_name: String,
     val last_name: String,
     val pwd : String,
     val email: String,
-    val classroom_id: String
+    val classroom_id: String,
+    val title : String,
+    val description : String,
+    val problem : String,
+    val tests : String
 )
 
 data class Student(val first_name: String, val last_name: String, val classroom_id: String, val email: String)
@@ -53,18 +57,32 @@ fun Application.api() { // Extension function for Application called adder()
             val col = call.parameters["collection"]!!
             val doc = call.parameters["document"]!!
 
-            var data = getDocumentFromDB(col, doc, db)!!
+            var data = getDocumentFromDB(col, doc, db)
 
-            call.respond(data)
+            if (data != null) {
+                call.respond(data)
+            }
+            else {
+                call.respondText("Sorry, but there is no document under $col/$doc in firebase at this time.")
+            }
         }
 
-        post("/api/firestore/add/student/") {
-            val request = call.receive<AddStudentRequest>()
-            val response = addNewStudent(request.first_name, request.last_name, request.pwd,
-                request.email, request.classroom_id)
-            call.respond(response!!)
+        // Add stuents and teachers
+        post("/api/firestore/add/{doctype}/") {
+            val doctype = call.parameters["doctype"]!!
+            val request = call.receive<AddItemRequest>()
+            val response = when(doctype) {
+                "student" -> addNewStudent(request.first_name, request.last_name, request.pwd,
+                    request.email, request.classroom_id)
+                "teacher" -> addNewTeacher(request.first_name, request.last_name, request.pwd,
+                    request.email)
+                "classroom" -> addNewClassroom(request.email, request.pwd)
+                "assignment" -> addNewAssignment(request.classroom_id, request.title, request.description,
+                    request.problem, request.tests)
+                else -> throw Exception("$doctype cannot be added.")
+            }
+            response?.let { it1 -> call.respond(it1) }
         }
-
 
         get("/") {
             call.respondText(hello())
