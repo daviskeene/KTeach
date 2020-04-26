@@ -15,37 +15,4 @@ class TestMain : StringSpec({
             }
         }
     }
-
-    "should accept post calculate request" {
-        withTestApplication(Application::api) {
-            handleRequest(HttpMethod.Post, "/calculate") {
-                addHeader("content-type", "application/json")
-                setBody("""
-{
-    "operation": "add",
-    "first": 4,
-    "second": 2
-}
-                """.trimIndent())
-            }.apply {
-                response.status() shouldBe HttpStatusCode.OK
-            }
-        }
-    }
-
-    "should serialize json properly" {
-        withTestApplication(Application::api) {
-            handleRequest(HttpMethod.Post, "/calcluate") {
-                addHeader("content-type", "application/json")
-                setBody("""
-{
-    "operation": "add",
-    "first": 2,
-    "second": 3
-}
-                    
-                """.trimIndent())
-            }
-        }
-    }
 })

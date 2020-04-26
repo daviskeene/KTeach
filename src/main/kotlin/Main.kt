@@ -28,6 +28,15 @@ data class CalculatorRequest(
     val second: Int
 )
 
+data class AddStudentRequest(
+    val doctype: String,
+    val first_name: String,
+    val last_name: String,
+    val pwd : String,
+    val email: String,
+    val classroom_id: String
+)
+
 data class Student(val first_name: String, val last_name: String, val classroom_id: String, val email: String)
 
 fun Application.api() { // Extension function for Application called adder()
@@ -37,12 +46,9 @@ fun Application.api() { // Extension function for Application called adder()
 
     routing {
 
-        // Retrieves data from a firestore request
-        get("/firestore/{collection}/{document}") {
-            val db = FirestoreOptions.newBuilder()
-                .setTimestampsInSnapshotsEnabled(true)
-                .build()
-                .service
+        // Retrieves data from a firestore document
+        get("/api/firestore/{collection}/{document}") {
+            val db = Constants.db
 
             val col = call.parameters["collection"]!!
             val doc = call.parameters["document"]!!
@@ -51,6 +57,14 @@ fun Application.api() { // Extension function for Application called adder()
 
             call.respond(data)
         }
+
+        post("/api/firestore/add/student/") {
+            val request = call.receive<AddStudentRequest>()
+            val response = addNewStudent(request.first_name, request.last_name, request.pwd,
+                request.email, request.classroom_id)
+            call.respond(response!!)
+        }
+
 
         get("/") {
             call.respondText(hello())
