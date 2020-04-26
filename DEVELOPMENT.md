@@ -17,3 +17,8 @@ The test.kt file contains the tests, using a custom testing framework. The goal 
 
 The idea is for the user to be able to work in IntelliJ and then submit their solution file into this site for grading. The file
 would be named something specific to match it to the corresponding testing file, or use some other method of linking the two.
+
+<i> 4/26/19 </i>
+
+Woke up early today to begin working, and thusfar (as of 11:30am) I've made really good progress. Most of the cloud and auth procedures are completed,
+so now I need to dig into the heart of the project- making a system that grades submissions.
