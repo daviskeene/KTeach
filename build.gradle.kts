@@ -1,6 +1,9 @@
+import java.util.regex.Pattern.compile
+
 plugins {
     kotlin("jvm") version "1.3.61"
     id("org.jlleitschuh.gradle.ktlint") version "9.2.1"
+    distribution
 }
 
 group = "org.example"
@@ -9,6 +12,8 @@ version = "1.0-SNAPSHOT"
 repositories {
     mavenCentral()
 }
+
+compile("ch.qos.logback:logback-classic:1.2.3")
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))

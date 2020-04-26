@@ -27,18 +27,3 @@ fun computeScore(cases: List<Case>) : Double {
     val (score, total) = sumScore(cases)
     return 100 * (score / total)
 }
-
-fun main() {
-    val cases = listOf(
-        Case("5 + 10", 2.0) {
-            var x = 5;
-            x = x + 10
-            add(5,10) == x
-        }
-    )
-    println(computeScore(cases))
-}
-
-fun add(a: Int, b: Int) : Int {
-    return a + b
-}

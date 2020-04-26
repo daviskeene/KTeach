@@ -1,10 +1,15 @@
+import Grading.computeScore
 import Services.*
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
 import io.ktor.features.ContentNegotiation
 import io.ktor.gson.gson
+import io.ktor.http.content.PartData
+import io.ktor.http.content.forEachPart
+import io.ktor.http.content.streamProvider
 import io.ktor.request.receive
+import io.ktor.request.receiveMultipart
 import io.ktor.response.respond
 import io.ktor.response.respondText
 import io.ktor.routing.get
@@ -12,6 +17,10 @@ import io.ktor.routing.post
 import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
+import java.io.File
+import java.io.IOError
+import java.io.IOException
+import java.util.concurrent.TimeUnit
 
 
 fun hello(): String {
@@ -80,6 +89,35 @@ fun Application.api() { // Extension function for Application called adder()
             response?.let { it1 -> call.respond(it1) }
         }
 
+        post("/api/upload/") {
+            val multipart = call.receiveMultipart()
+            var studentID = ""
+            var kotlinFile: File? = null
+
+            multipart.forEachPart { part ->
+                if (part is PartData.FormItem) {
+                    if (part.name == "id") {
+                        studentID = part.value
+                    }
+                } else if (part is PartData.FileItem) {
+                    val ext = File(part.originalFileName).extension
+                    val name = if (File(part.originalFileName).name.contains("test")) "file_test.$ext" else "file.$ext"
+                    val file = File(
+                        "src/main/kotlin/Grading/temp/",
+                        name
+                    )
+                    part.streamProvider().use { its -> file.outputStream().buffered().use {its.copyTo(it)} }
+                    kotlinFile = file
+                }
+            }
+            call.respond(kotlinFile!!.absolutePath)
+        }
+
+        get("/api/grade") {
+            // Need to execute the command outside of runtime?
+            println(computeScore(Grading.cases))
+        }
+
         get("/") {
             call.respondText(hello())
         }
@@ -87,5 +125,22 @@ fun Application.api() { // Extension function for Application called adder()
 }
 
 fun main() {
-    embeddedServer(Netty, 8080, module = Application::api).start(wait = true)
+    embeddedServer(Netty, watchPaths = listOf("/"), port = 8080, module = Application::api).start(wait = true)
+}
+
+fun String.runCommand(workingDir: File) : String? {
+    try {
+        val parts = this.split("\\s".toRegex())
+        val proc = ProcessBuilder(*parts.toTypedArray())
+            .directory(workingDir)
+            .redirectOutput(ProcessBuilder.Redirect.PIPE)
+            .redirectError(ProcessBuilder.Redirect.PIPE)
+            .start()
+
+        proc.waitFor(60, TimeUnit.MINUTES)
+        return proc.inputStream.bufferedReader().readText()
+    } catch (e: IOException) {
+        e.printStackTrace()
+        return null
+    }
 }
