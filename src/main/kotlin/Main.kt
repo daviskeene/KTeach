@@ -17,6 +17,7 @@ import io.ktor.routing.post
 import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
+import jdk.jfr.Percentage
 import java.io.File
 import java.io.IOError
 import java.io.IOException
@@ -41,6 +42,8 @@ data class AddItemRequest(
 )
 
 data class Student(val first_name: String, val last_name: String, val classroom_id: String, val email: String)
+
+data class Results(val cases: List<String>, val percentage: Double)
 
 fun Application.api() { // Extension function for Application called adder()
     install(ContentNegotiation) {
@@ -103,19 +106,20 @@ fun Application.api() { // Extension function for Application called adder()
                     val ext = File(part.originalFileName).extension
                     val name = if (File(part.originalFileName).name.contains("test")) "file_test.$ext" else "file.$ext"
                     val file = File(
-                        "src/main/kotlin/Grading/temp/",
+                        "src/main/kotlin/Grading/",
                         name
                     )
                     part.streamProvider().use { its -> file.outputStream().buffered().use {its.copyTo(it)} }
                     kotlinFile = file
                 }
             }
-            call.respond(kotlinFile!!.absolutePath)
-        }
-
-        get("/api/grade") {
-            // Need to execute the command outside of runtime?
-            println(computeScore(Grading.cases))
+            // Need to call compilation outside of server, use bash scripts to do so
+//            "./compile.sh".runCommand()
+//            val results = "./run.sh".runCommand()
+//            val tests = results?.split("\n")!!
+//            // remove temp files
+//            "./clean.sh".runCommand()
+//            call.respond(Results(tests.subList(0, tests.size - 1), tests.last().toDouble()))
         }
 
         get("/") {
@@ -128,11 +132,10 @@ fun main() {
     embeddedServer(Netty, watchPaths = listOf("/"), port = 8080, module = Application::api).start(wait = true)
 }
 
-fun String.runCommand(workingDir: File) : String? {
+fun String.runCommand() : String? {
     try {
         val parts = this.split("\\s".toRegex())
         val proc = ProcessBuilder(*parts.toTypedArray())
-            .directory(workingDir)
             .redirectOutput(ProcessBuilder.Redirect.PIPE)
             .redirectError(ProcessBuilder.Redirect.PIPE)
             .start()
