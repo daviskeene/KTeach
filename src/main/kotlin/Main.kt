@@ -114,12 +114,12 @@ fun Application.api() { // Extension function for Application called adder()
                 }
             }
             // Need to call compilation outside of server, use bash scripts to do so
-//            "./compile.sh".runCommand()
-//            val results = "./run.sh".runCommand()
-//            val tests = results?.split("\n")!!
-//            // remove temp files
-//            "./clean.sh".runCommand()
-//            call.respond(Results(tests.subList(0, tests.size - 1), tests.last().toDouble()))
+            "./compile.sh".runCommand()
+            val results = "./run.sh".runCommand()
+            val tests = results?.split("\n")!!
+            // remove temp files
+            "./clean.sh".runCommand()
+            call.respond(Results(tests.subList(0, tests.size - 1), tests.last().toDouble()))
         }
 
         get("/") {
