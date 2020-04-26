@@ -87,42 +87,6 @@ fun Application.api() { // Extension function for Application called adder()
         get("/") {
             call.respondText(hello())
         }
-        get("/test") {
-            call.respondText("Testing")
-        }
-
-        post("/calculate") {
-            val request = call.receive<CalculatorRequest>() // Method we are calling on the contents of the request
-            val result = when (request.operation) {
-                "add" -> request.first + request.second
-                "subtract" -> request.first - request.second
-                "multiply" -> request.first * request.second
-                "divide" -> request.first / request.second
-                else -> throw Exception("${request.operation} is not supported.")
-            }
-            call.respond(Result(request.first, request.second, result, request.operation))
-        }
-
-        // Parameters are expressed with {varName} in the url
-        get("/{operation}/{first}/{second}") {
-            try {
-                val operation = call.parameters["operation"]!!
-                val first = call.parameters["first"]!!.toInt()
-                val second = call.parameters["second"]!!.toInt() // Throws an exception on non-number values
-                val result = when (operation) {
-                    "add" -> first + second
-                    "subtract" -> first - second
-                    "multiply" -> first * second
-                    "divide" -> first / second
-                    else -> throw Exception("$operation is not supported.")
-                }
-
-                val addResult = Result(first, second, result, operation)
-                call.respond(addResult)
-            } catch (e: Exception) {
-                call.respond(HttpStatusCode.BadRequest)
-            }
-        }
     }
 }
 
