@@ -2,6 +2,7 @@ import Services.*
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
+import io.ktor.features.CORS
 import io.ktor.features.ContentNegotiation
 import io.ktor.gson.gson
 import io.ktor.http.content.PartData
@@ -9,7 +10,6 @@ import io.ktor.http.content.forEachPart
 import io.ktor.http.content.streamProvider
 import io.ktor.request.receive
 import io.ktor.request.receiveMultipart
-import io.ktor.request.receiveParameters
 import io.ktor.response.respond
 import io.ktor.response.respondText
 import io.ktor.routing.get
@@ -17,12 +17,9 @@ import io.ktor.routing.post
 import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
-import jdk.jfr.Percentage
 import java.io.File
-import java.io.IOError
 import java.io.IOException
 import java.util.concurrent.TimeUnit
-import kotlin.concurrent.thread
 
 
 fun hello(): String {
@@ -46,9 +43,15 @@ data class Student(val first_name: String, val last_name: String, val classroom_
 
 data class Results(val cases: List<String>, val grade: List<Double>)
 
+data class IndexData(val items: List<Int>)
+
 fun Application.api() { // Extension function for Application called adder()
     install(ContentNegotiation) {
         gson { }
+    }
+
+    install(CORS) {
+        anyHost()
     }
 
     routing {
@@ -104,7 +107,7 @@ fun Application.api() { // Extension function for Application called adder()
             multipart.forEachPart { part ->
                 if (part is PartData.FileItem) {
                     val ext = File(part.originalFileName).extension
-                    val name = if (File(part.originalFileName).name.contains("test")) "file_test.$ext" else "file.$ext"
+                    val name = if (File(part.originalFileName).name.contains("test")) "file_test_$studentID.$ext" else "file_$studentID.$ext"
                     val file = File(
                         path,
                         name
@@ -127,10 +130,6 @@ fun Application.api() { // Extension function for Application called adder()
             // remove temp files
             "./clean.sh $studentID".runCommand()
             call.respond(Results(cases, numbers))
-        }
-
-        get("/") {
-            call.respondText(hello())
         }
     }
 }

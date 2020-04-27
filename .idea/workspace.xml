@@ -2,37 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5682e2d5-131e-4d5c-a7be-218048cf1ce9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Services/Grading.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/templates/index.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Grading/Case.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Grading/FileKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Grading/File_testKt$cases$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Grading/File_testKt$cases$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Grading/File_testKt$cases$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Grading/File_testKt$cases$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Grading/File_testKt$cases$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Grading/File_testKt$cases$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Grading/File_testKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Grading/TestResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Grading/TestUtilKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/META-INF/main.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clean.sh" beforeDir="false" afterPath="$PROJECT_DIR$/clean.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compile.sh" beforeDir="false" afterPath="$PROJECT_DIR$/compile.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/AddItemRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/AddItemRequest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$1$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$2$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$2$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$2$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$2$3$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$2$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$2$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$2$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$2$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$2$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$2$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$2$3$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$2$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$2$4.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/Results.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Results.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Grading/file.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -76,23 +65,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="120" column="13" lean-forward="true" selection-start-line="120" selection-start-column="13" selection-end-line="120" selection-end-column="13" />
+            <state relative-caret-position="928">
+              <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
               <folding>
-                <element signature="e#1#821#0" expanded="true" />
+                <element signature="e#0#850#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="732">
+              <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#7523#7529#1" expanded="true" />
+                <element signature="e#7674#7680#1" expanded="true" />
+                <element signature="e#7830#7836#1" expanded="true" />
+                <element signature="e#8014#8020#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/Grading.kt">
+        <entry file="file://$PROJECT_DIR$/frontend/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="783">
-              <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+            <state relative-caret-position="174">
+              <caret line="6" column="79" selection-start-line="6" selection-start-column="79" selection-end-line="6" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -109,7 +115,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/TestUtil.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
+            <state relative-caret-position="725">
               <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
             </state>
           </provider>
@@ -118,7 +124,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-573">
+            <state relative-caret-position="29">
               <caret line="183" column="10" selection-start-line="183" selection-start-column="10" selection-end-line="183" selection-end-column="10" />
             </state>
           </provider>
@@ -139,6 +145,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -163,7 +171,6 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/Grading/example1.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Grading/example1_test.kt" />
         <option value="$PROJECT_DIR$/resources/application.conf" />
-        <option value="$PROJECT_DIR$/build.gradle.kts" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Grading/temp/file.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Grading/temp/file_test.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Grading/file_test.kt" />
@@ -173,12 +180,17 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/Grading/file_score.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Grading/file.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Grading/TestUtil.kt" />
+        <option value="$PROJECT_DIR$/build.gradle.kts" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Services/Grading.kt" />
+        <option value="$PROJECT_DIR$/frontend/css/style.css" />
+        <option value="$PROJECT_DIR$/resources/templates/index.ftl" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Main.kt" />
+        <option value="$PROJECT_DIR$/frontend/js/script.js" />
+        <option value="$PROJECT_DIR$/frontend/index.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="43" />
     <option name="width" value="1920" />
     <option name="height" value="1092" />
@@ -188,6 +200,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -199,6 +212,28 @@
             <path>
               <item name="hello" type="b2602c69:ProjectViewProjectNode" />
               <item name="KTeach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KTeach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KTeach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KTeach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KTeach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -221,15 +256,6 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="Grading" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTeach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="Grading" type="462c0819:PsiDirectoryNode" />
-              <item name="123456" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hello" type="b2602c69:ProjectViewProjectNode" />
@@ -243,14 +269,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587949267787" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588024719229" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/kotlin/Grading" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -361,16 +388,18 @@
       <updated>1587778514240</updated>
       <workItem from="1587778526449" duration="29374000" />
       <workItem from="1587931116609" duration="4476000" />
+      <workItem from="1588020021144" duration="4513000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39927000" />
+    <option name="totallyTimeSpent" value="46951000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="43" width="3200" height="1757" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25305074" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25626203" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -379,7 +408,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -482,51 +511,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle.kts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/Auth.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/IOLibrary.kt" />
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file_test.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file_test_123456.kt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file_123456.kt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Grading/TestResult.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Grading/FileKt.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/bruh/bruh.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file_test.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file_test_123456.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file_123456.kt" />
+    <entry file="file://$PROJECT_DIR$/classes/Grading/TestResult.class" />
+    <entry file="file://$PROJECT_DIR$/classes/Grading/FileKt.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/bruh/bruh.kt" />
     <entry file="file://$PROJECT_DIR$/run.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -541,24 +532,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file_score.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/123456/file_test.kt" />
+    <entry file="file://$PROJECT_DIR$/build.gradle.kts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="725">
+          <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file_score.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/Grading.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/TestUtil.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -569,31 +556,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/Grading.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/TestUtil.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        <state relative-caret-position="725">
+          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/Auth.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.freemarker/freemarker/2.3.30/c762831bebf62255a0c0764a5aaee76e39399c41/freemarker-2.3.30-sources.jar!/freemarker/template/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="2868" selection-start-line="2868" selection-end-line="2868" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-573">
+        <state relative-caret-position="29">
           <caret line="183" column="10" selection-start-line="183" selection-start-column="10" selection-end-line="183" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/123456/file_test.kt">
+    <entry file="file://$PROJECT_DIR$/frontend/css/style.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/css/landing-page.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17450" />
+        <state relative-caret-position="174">
+          <caret line="6" column="79" selection-start-line="6" selection-start-column="79" selection-end-line="6" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/templates/index.ftl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/vendor/bootstrap/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1013">
+          <caret line="5" column="24160" selection-start-line="5" selection-start-column="24160" selection-end-line="5" selection-end-column="24160" />
+          <folding>
+            <element signature="e#25768#26002#2" expanded="true" />
+            <element signature="e#26806#26959#1" expanded="true" />
+            <element signature="e#26999#27233#1" expanded="true" />
+            <element signature="e#30239#30515#2" expanded="true" />
+            <element signature="e#31347#31500#1" expanded="true" />
+            <element signature="e#31540#31816#1" expanded="true" />
+            <element signature="e#61072#61259#2" expanded="true" />
+            <element signature="e#61488#61624#2" expanded="true" />
+            <element signature="e#62027#62160#2" expanded="true" />
+            <element signature="e#63642#63795#1" expanded="true" />
+            <element signature="e#75788#76018#2" expanded="true" />
+            <element signature="e#76885#77121#2" expanded="true" />
+            <element signature="e#106714#106891#2" expanded="true" />
+            <element signature="e#106937#107114#2" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="120" column="13" lean-forward="true" selection-start-line="120" selection-start-column="13" selection-end-line="120" selection-end-column="13" />
+        <state relative-caret-position="928">
+          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
           <folding>
-            <element signature="e#1#821#0" expanded="true" />
+            <element signature="e#0#850#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/img/bg-masthead.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="732">
+          <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#7523#7529#1" expanded="true" />
+            <element signature="e#7674#7680#1" expanded="true" />
+            <element signature="e#7830#7836#1" expanded="true" />
+            <element signature="e#8014#8020#0" expanded="true" />
           </folding>
         </state>
       </provider>
