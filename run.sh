@@ -1,1 +1,1 @@
-kotlin test.jar
+kotlin test_$1.jar

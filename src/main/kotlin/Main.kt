@@ -1,4 +1,3 @@
-import Grading.computeScore
 import Services.*
 import io.ktor.application.Application
 import io.ktor.application.call
@@ -10,6 +9,7 @@ import io.ktor.http.content.forEachPart
 import io.ktor.http.content.streamProvider
 import io.ktor.request.receive
 import io.ktor.request.receiveMultipart
+import io.ktor.request.receiveParameters
 import io.ktor.response.respond
 import io.ktor.response.respondText
 import io.ktor.routing.get
@@ -22,6 +22,7 @@ import java.io.File
 import java.io.IOError
 import java.io.IOException
 import java.util.concurrent.TimeUnit
+import kotlin.concurrent.thread
 
 
 fun hello(): String {
@@ -43,7 +44,7 @@ data class AddItemRequest(
 
 data class Student(val first_name: String, val last_name: String, val classroom_id: String, val email: String)
 
-data class Results(val cases: List<String>, val percentage: Double)
+data class Results(val cases: List<String>, val grade: List<Double>)
 
 fun Application.api() { // Extension function for Application called adder()
     install(ContentNegotiation) {
@@ -92,34 +93,40 @@ fun Application.api() { // Extension function for Application called adder()
             response?.let { it1 -> call.respond(it1) }
         }
 
-        post("/api/upload/") {
+        post("/api/upload/{student_id}") {
             val multipart = call.receiveMultipart()
-            var studentID = ""
-            var kotlinFile: File? = null
+            var studentID = call.parameters["student_id"]!!
+            var testFile: File? = null
 
+            // Make a directory for the files
+            val path = "src/main/kotlin/Grading/$studentID"
+            "mkdir $path".runCommand()
             multipart.forEachPart { part ->
-                if (part is PartData.FormItem) {
-                    if (part.name == "id") {
-                        studentID = part.value
-                    }
-                } else if (part is PartData.FileItem) {
+                if (part is PartData.FileItem) {
                     val ext = File(part.originalFileName).extension
                     val name = if (File(part.originalFileName).name.contains("test")) "file_test.$ext" else "file.$ext"
                     val file = File(
-                        "src/main/kotlin/Grading/",
+                        path,
                         name
                     )
                     part.streamProvider().use { its -> file.outputStream().buffered().use {its.copyTo(it)} }
-                    kotlinFile = file
+                    if (name.contains("test")) {
+                        testFile = file
+                    }
                 }
             }
+            // Check to see if we uploaded a test file, or if we need to download one
+            if (testFile == null) {
+                downloadFile("https://raw.githubusercontent.com/daviskeene/KTeach/master/file_test.kt", path)
+            }
+
             // Need to call compilation outside of server, use bash scripts to do so
-            "./compile.sh".runCommand()
-            val results = "./run.sh".runCommand()
-            val tests = results?.split("\n")!!
+            "./compile.sh $studentID".runCommand()
+            val results = "./run.sh $studentID".runCommand()
+            val (cases, numbers) = splitGradingOutput(results!!)
             // remove temp files
-            "./clean.sh".runCommand()
-            call.respond(Results(tests.subList(0, tests.size - 1), tests.last().toDouble()))
+            "./clean.sh $studentID".runCommand()
+            call.respond(Results(cases, numbers))
         }
 
         get("/") {
@@ -146,4 +153,18 @@ fun String.runCommand() : String? {
         e.printStackTrace()
         return null
     }
+}
+
+fun splitGradingOutput(output: String) : Pair<List<String>, List<Double>> {
+    // Grading numbers are only used in the last two test cases.
+    val items = output.split("\n")
+    var numbers = items
+        .filter { it.toDoubleOrNull() != null }
+        .map { it.toDouble() }
+    var cases = items.filter { it.toDoubleOrNull() == null }
+    return Pair(cases, numbers)
+}
+
+fun downloadFile(url: String, path: String) {
+    "wget $url -P $path".runCommand()
 }

@@ -1,2 +1,2 @@
-rm -r test.jar
-find src/main/kotlin/ -name 'file*' -exec rm {} \;
+rm -r test_$1.jar
+rm -rf src/main/kotlin/Grading/$1
