@@ -40,7 +40,6 @@
         <div class="container-fluid">
             <h1 class="mt-4" id="name"></h1>
             <p id="description"></p>
-        </div>
 
         <a id="download" role="button" download>
             <button class="btn btn-outline-primary" style="vertical-align: middle">Download Assignment</button>
@@ -48,18 +47,21 @@
         <label for="upload" class="btn btn-outline-success" style="vertical-align: middle">
             Upload Solution
         </label>
-        <div class="spinner-border text-primary" id="upload-spinner" role="status" style="opacity: 0">
-            <span class="sr-only">Loading...</span>
-        </div>
-        <input type="file" id="upload" style="opacity: 0%;"/>
-        <input type="hidden" id="testpath" value="">
 
-        <br><br><br>
-        <div id="results">
-            <h2 id="score"></h2>
-            <div id="autograder">
-                <h3>Autograder Results:</h3>
+            <div class="spinner-border text-primary" id="upload-spinner" role="status" style="opacity: 0">
+                <span class="sr-only">Loading...</span>
             </div>
+            <input type="file" id="upload" style="opacity: 0%;"/>
+            <input type="hidden" id="testpath" value="">
+
+            <br><br><br>
+            <div id="results">
+                <h2 id="score"></h2>
+                <div id="autograder">
+                    <h3>Autograder results will display here.</h3>
+                </div>
+        </div>
+
     </div>
     <!-- /#page-content-wrapper -->
 
