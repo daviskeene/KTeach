@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/landing-page.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">KTeach: The Kotlin Classroom</a>
+        <a class="btn btn-primary" href="authentication.html" id="username"></a>
+    </div>
+</nav>
+
+<div id ="content">
+    <br><br>
+    <h1 id="name"></h1>
+    <h3 id="description"></h3>
+    <a id="download" role="button" download>
+    <button class="btn btn-outline-primary">Download Assignment</button>
+    </a>
+    <label for="upload" class="btn btn-outline-success">
+        Upload Solution
+    </label>
+    <input type="file" id="upload"/>
+    <input type="hidden" id="testpath" value="">
+
+    <br><br><br>
+    <div id="results">
+        <h2>Score: </h2>
+        <div class="dropdown-divider"></div>
+
+    </div>
+
+    <script>
+        let user_json = JSON.parse(localStorage.getItem('user'));
+        document.getElementById("username").innerText = "Hi, ".concat(user_json["first_name"]);
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        let assignment_id = getUrlVars()["id"];
+        console.log(assignment_id);
+
+        fetch('http://localhost:8080/api/firestore/Assignments/'+assignment_id)
+            .then((res) => {
+                return res.json()
+            })
+            .then((data) => {
+                const {title, description, problem, test, id} = data;
+                console.log(data);
+                document.getElementById("name").innerText = title;
+                document.getElementById("description").innerText = description;
+                let button = document.getElementById("download");
+                button.setAttribute('href', problem);
+                let testpath = document.getElementById("testpath");
+                testpath.setAttribute('value', test);
+            })
+    </script>
+
+    <script>
+        document.querySelector('#upload').addEventListener('change', event => {
+            handleImageUpload(event);
+        });
+
+        const handleImageUpload = event => {
+            let user_json = JSON.parse(localStorage.getItem('user'));
+            let student_id = user_json["id"];
+            let testpath = document.getElementById("testpath").getAttribute("value");
+            console.log(testpath);
+            const files = event.target.files;
+            const formData = new FormData();
+            formData.append('file', files[0]);
+            formData.append('test', testpath);
+            console.log(student_id);
+            console.log(formData.get('file'));
+
+            fetch('http://localhost:8080/api/upload/' + student_id, {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    let array = [];
+                    data.cases.forEach((testcase) => {
+                        array.push(testcase);
+                    });
+                })
+        }
+
+    </script>
+
+</div>
+
+</body>
+</html>

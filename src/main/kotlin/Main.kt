@@ -132,6 +132,7 @@ fun Application.api() { // Extension function for Application called adder()
             val multipart = call.receiveMultipart()
             var studentID = call.parameters["student_id"]!!
             var testFile: File? = null
+            var testDirectory : String? = null
 
             // Make a directory for the files
             val path = "src/main/kotlin/Grading/$studentID"
@@ -149,10 +150,20 @@ fun Application.api() { // Extension function for Application called adder()
                         testFile = file
                     }
                 }
+                if (part is PartData.FormItem) {
+                    if (part.name == "test") {
+                        testDirectory = part.value
+                    }
+                }
             }
             // Check to see if we uploaded a test file, or if we need to download one
             if (testFile == null) {
-                downloadFile("https://raw.githubusercontent.com/daviskeene/KTeach/master/file_test.kt", path)
+                if (testDirectory == null) {
+                    downloadFile("https://raw.githubusercontent.com/daviskeene/KTeach/master/file_test.kt", path)
+                }
+                else {
+                    downloadFile(testDirectory!!, path)
+                }
             }
 
             // Need to call compilation outside of server, use bash scripts to do so

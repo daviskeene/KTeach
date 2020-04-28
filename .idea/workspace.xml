@@ -2,24 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5682e2d5-131e-4d5c-a7be-218048cf1ce9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/templates/studenthome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/templates/assignment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/templates/authentication.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/authentication.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/studenthome.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/studenthome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$3$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$3$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$3$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$3$3$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$3$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$3$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$3$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$3$4$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$3$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$3$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$3$5$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$3$5$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$3$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$3$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$api$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$api$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt$main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/MainKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/Services/GLibraryKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Services/GLibraryKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Services/GradingKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Services/GradingKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Services/Grading.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Services/Grading.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -65,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2120">
-              <caret line="86" column="46" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
+            <state relative-caret-position="2030">
+              <caret line="158" column="85" selection-start-line="158" selection-start-column="85" selection-end-line="158" selection-end-column="85" />
               <folding>
                 <element signature="e#0#794#0" expanded="true" />
               </folding>
@@ -74,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1102">
-              <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+            <state relative-caret-position="-203">
+              <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
               <folding>
                 <element signature="e#7523#7529#1" expanded="true" />
                 <element signature="e#7674#7680#1" expanded="true" />
@@ -101,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/templates/authentication.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="132" column="36" selection-start-line="132" selection-start-column="36" selection-end-line="132" selection-end-column="36" />
+            <state relative-caret-position="581">
+              <caret line="130" column="10" lean-forward="true" selection-start-line="130" selection-start-column="10" selection-end-line="130" selection-end-column="10" />
               <folding>
                 <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#form#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -111,29 +109,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/templates/studenthome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="841">
-              <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="31" selection-end-column="99" />
+            <state relative-caret-position="728">
+              <caret line="47" column="35" lean-forward="true" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/js/script.js">
+        <entry file="file://$PROJECT_DIR$/frontend/templates/assignment.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2639">
-              <caret line="91" column="26" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+            <state relative-caret-position="844">
+              <caret line="103" column="21" lean-forward="true" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -150,8 +139,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="989">
-              <caret line="242" column="1" selection-start-line="242" selection-start-column="1" selection-end-line="242" selection-end-column="1" />
+            <state relative-caret-position="1366">
+              <caret line="217" column="27" selection-start-line="217" selection-start-column="27" selection-end-line="217" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -212,12 +201,14 @@
         <option value="$PROJECT_DIR$/frontend/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Services/Auth.kt" />
         <option value="$PROJECT_DIR$/frontend/js/script.js" />
-        <option value="$PROJECT_DIR$/frontend/templates/authentication.html" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/Main.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Services/Grading.kt" />
-        <option value="$PROJECT_DIR$/frontend/templates/studenthome.html" />
         <option value="$PROJECT_DIR$/frontend/templates/index.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/authentication.html" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt" />
+        <option value="$PROJECT_DIR$/frontend/templates/studenthome.html" />
+        <option value="$PROJECT_DIR$/frontend/vendor/bootstrap/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Main.kt" />
+        <option value="$PROJECT_DIR$/frontend/templates/assignment.html" />
       </list>
     </option>
   </component>
@@ -306,7 +297,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588043062598" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588050056505" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/kotlin/Grading" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -420,18 +411,18 @@
       <updated>1587778514240</updated>
       <workItem from="1587778526449" duration="29374000" />
       <workItem from="1587931116609" duration="4476000" />
-      <workItem from="1588020021144" duration="21035000" />
+      <workItem from="1588020021144" duration="28219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63473000" />
+    <option name="totallyTimeSpent" value="70657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="43" width="3200" height="1757" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25626203" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25626203" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -440,7 +431,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21666667" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21666667" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -594,29 +585,6 @@
     <entry file="file://$PROJECT_DIR$/resources/templates/index.ftl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/vendor/bootstrap/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1013">
-          <caret line="5" column="24160" selection-start-line="5" selection-start-column="24160" selection-end-line="5" selection-end-column="24160" />
-          <folding>
-            <element signature="e#25768#26002#2" expanded="true" />
-            <element signature="e#26806#26959#1" expanded="true" />
-            <element signature="e#26999#27233#1" expanded="true" />
-            <element signature="e#30239#30515#2" expanded="true" />
-            <element signature="e#31347#31500#1" expanded="true" />
-            <element signature="e#31540#31816#1" expanded="true" />
-            <element signature="e#61072#61259#2" expanded="true" />
-            <element signature="e#61488#61624#2" expanded="true" />
-            <element signature="e#62027#62160#2" expanded="true" />
-            <element signature="e#63642#63795#1" expanded="true" />
-            <element signature="e#75788#76018#2" expanded="true" />
-            <element signature="e#76885#77121#2" expanded="true" />
-            <element signature="e#106714#106891#2" expanded="true" />
-            <element signature="e#106937#107114#2" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -655,10 +623,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/Grading.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="899">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/vendor/bootstrap/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="5" column="43561" selection-start-line="5" selection-start-column="43561" selection-end-line="5" selection-end-column="43561" />
+          <folding>
+            <element signature="e#25768#26002#2" expanded="true" />
+            <element signature="e#26806#26959#1" expanded="true" />
+            <element signature="e#26999#27233#1" expanded="true" />
+            <element signature="e#30239#30515#2" expanded="true" />
+            <element signature="e#31347#31500#1" expanded="true" />
+            <element signature="e#31540#31816#1" expanded="true" />
+            <element signature="e#61072#61259#2" expanded="true" />
+            <element signature="e#61488#61624#2" expanded="true" />
+            <element signature="e#62027#62160#2" expanded="true" />
+            <element signature="e#63642#63795#1" expanded="true" />
+            <element signature="e#75788#76018#2" expanded="true" />
+            <element signature="e#76885#77121#2" expanded="true" />
+            <element signature="e#106714#106891#2" expanded="true" />
+            <element signature="e#106937#107114#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-203">
+          <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+          <folding>
+            <element signature="e#7523#7529#1" expanded="true" />
+            <element signature="e#7674#7680#1" expanded="true" />
+            <element signature="e#7830#7836#1" expanded="true" />
+            <element signature="e#8014#8020#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="989">
-          <caret line="242" column="1" selection-start-line="242" selection-start-column="1" selection-end-line="242" selection-end-column="1" />
+        <state relative-caret-position="1366">
+          <caret line="217" column="27" selection-start-line="217" selection-start-column="27" selection-end-line="217" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -669,27 +680,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2120">
-          <caret line="86" column="46" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#794#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/Grading.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
-          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/templates/authentication.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="132" column="36" selection-start-line="132" selection-start-column="36" selection-end-line="132" selection-end-column="36" />
+        <state relative-caret-position="581">
+          <caret line="130" column="10" lean-forward="true" selection-start-line="130" selection-start-column="10" selection-end-line="130" selection-end-column="10" />
           <folding>
             <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#form#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -697,23 +691,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/studenthome.html">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="841">
-          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="31" selection-end-column="99" />
+        <state relative-caret-position="2030">
+          <caret line="158" column="85" selection-start-line="158" selection-start-column="85" selection-end-line="158" selection-end-column="85" />
+          <folding>
+            <element signature="e#0#794#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/frontend/templates/assignment.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1102">
-          <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-          <folding>
-            <element signature="e#7523#7529#1" expanded="true" />
-            <element signature="e#7674#7680#1" expanded="true" />
-            <element signature="e#7830#7836#1" expanded="true" />
-            <element signature="e#8014#8020#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="844">
+          <caret line="103" column="21" lean-forward="true" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/studenthome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="47" column="35" lean-forward="true" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
         </state>
       </provider>
     </entry>

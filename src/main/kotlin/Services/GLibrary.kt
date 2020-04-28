@@ -214,10 +214,11 @@ fun addNewAssignment(classroom_id: String, title : String, desc : String, proble
     val id = randomString(8)
     val temp_assignment = getAssignmentTemplate()
     // Set fields
-    temp_assignment?.set("Title", title)
-    temp_assignment?.set("Description", desc)
+    temp_assignment?.set("title", title)
+    temp_assignment?.set("description", desc)
     temp_assignment?.set("problem", problem)
     temp_assignment?.set("tests", tests)
+    temp_assignment?.set("id", id)
 
     // Add to firestore
     val doc_ref = Constants.db.collection(Constants.assignments_col).document(id)
