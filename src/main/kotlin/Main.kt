@@ -20,6 +20,8 @@ import io.ktor.server.netty.Netty
 import java.io.File
 import java.io.IOException
 import java.util.concurrent.TimeUnit
+import io.ktor.http.HttpHeaders
+import io.ktor.http.HttpStatusCode
 
 
 fun hello(): String {
@@ -45,6 +47,8 @@ data class Results(val cases: List<String>, val grade: List<Double>)
 
 data class IndexData(val items: List<Int>)
 
+data class LoginRequest(val email: String, val password: String)
+
 fun Application.api() { // Extension function for Application called adder()
     install(ContentNegotiation) {
         gson { }
@@ -52,6 +56,11 @@ fun Application.api() { // Extension function for Application called adder()
 
     install(CORS) {
         anyHost()
+        header(HttpHeaders.AccessControlAllowOrigin)
+        header("Content-Type")
+        header(HttpHeaders.AccessControlAllowCredentials)
+        header(HttpHeaders.AccessControlAllowHeaders)
+        header(HttpHeaders.AccessControlAllowMethods)
     }
 
     routing {
@@ -76,7 +85,8 @@ fun Application.api() { // Extension function for Application called adder()
         // Add stuents and teachers
         post("/api/firestore/add/{doctype}/") {
             val doctype = call.parameters["doctype"]!!
-            val request = call.receive<AddItemRequest>()
+            try {
+                val request = call.receive<AddItemRequest>()
             val response = when(doctype) {
                 "student" -> addNewStudent(
                     request.first_name, request.last_name, request.pwd,
@@ -94,6 +104,22 @@ fun Application.api() { // Extension function for Application called adder()
                 else -> throw Exception("$doctype cannot be added.")
             }
             response?.let { it1 -> call.respond(it1) }
+            } catch (e: java.lang.Exception) {
+                e.printStackTrace();
+            }
+        }
+
+
+        post("/api/login/") {
+            val request = call.receive<LoginRequest>()
+            val result = login(request.email, request.password)
+            if (result == null) {
+                call.respond({
+                    HttpStatusCode.Unauthorized
+                    "Incorrect email or password"
+                })
+            }
+            result?.let { it1 -> call.respond(it1) }
         }
 
         post("/api/upload/{student_id}") {
