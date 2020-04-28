@@ -20,7 +20,7 @@
 <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">KTeach: The Kotlin Classroom</a>
-        <a class="btn btn-primary" href="authentication.html" id="username"></a>
+        <a class="btn btn-primary" href="studenthome.html" id="username"></a>
     </div>
 </nav>
 
@@ -39,7 +39,6 @@
                 .then((data) => {
                     data.forEach((assignment) =>  {
                         const {title, description, problem, test, id} = assignment;
-                        console.log(assignment);
                         let ref = "assignment.html?id=".concat(id);
                         let result =
                             '<h1>' + title + '</h1>'+

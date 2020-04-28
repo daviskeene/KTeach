@@ -14,40 +14,64 @@
     <!-- Custom styles for this template -->
     <link href="../css/landing-page.min.css" rel="stylesheet">
 
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/simple-sidebar.css" rel="stylesheet">
+
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-light bg-light static-top">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">KTeach: The Kotlin Classroom</a>
-        <a class="btn btn-primary" href="authentication.html" id="username"></a>
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading" id="sidebar-title">KTeach: The Online Classroom</div>
+        <div class="list-group list-group-flush">
+            <a href="studenthome.html" class="list-group-item list-group-item-action bg-light">Assignments</a>
+
+        </div>
     </div>
-</nav>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <div class="container-fluid">
+            <h1 class="mt-4" id="name"></h1>
+            <p id="description"></p>
+        </div>
+
+        <a id="download" role="button" download>
+            <button class="btn btn-outline-primary" style="vertical-align: middle">Download Assignment</button>
+        </a>
+        <label for="upload" class="btn btn-outline-success" style="vertical-align: middle">
+            Upload Solution
+        </label>
+        <div class="spinner-border text-primary" id="upload-spinner" role="status" style="opacity: 0">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <input type="file" id="upload" style="opacity: 0%;"/>
+        <input type="hidden" id="testpath" value="">
+
+        <br><br><br>
+        <div id="results">
+            <h2 id="score"></h2>
+            <div id="autograder">
+                <h3>Autograder Results:</h3>
+            </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
 
 <div id ="content">
-    <br><br>
-    <h1 id="name"></h1>
-    <h3 id="description"></h3>
-    <a id="download" role="button" download>
-    <button class="btn btn-outline-primary">Download Assignment</button>
-    </a>
-    <label for="upload" class="btn btn-outline-success">
-        Upload Solution
-    </label>
-    <input type="file" id="upload"/>
-    <input type="hidden" id="testpath" value="">
-
-    <br><br><br>
-    <div id="results">
-        <h2>Score: </h2>
-        <div class="dropdown-divider"></div>
 
     </div>
 
     <script>
         let user_json = JSON.parse(localStorage.getItem('user'));
-        document.getElementById("username").innerText = "Hi, ".concat(user_json["first_name"]);
+        document.getElementById("sidebar-title").innerText = "Classroom ".concat(user_json["classroom_id"]);
         function getUrlVars() {
             var vars = {};
             var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -84,7 +108,10 @@
             let user_json = JSON.parse(localStorage.getItem('user'));
             let student_id = user_json["id"];
             let testpath = document.getElementById("testpath").getAttribute("value");
-            console.log(testpath);
+            // Clear output
+            document.getElementById('score').innerText = "";
+            document.getElementById('autograder').innerHTML = "";
+
             const files = event.target.files;
             const formData = new FormData();
             formData.append('file', files[0]);
@@ -92,15 +119,21 @@
             console.log(student_id);
             console.log(formData.get('file'));
 
+            // Start spinner
+            document.getElementById('upload-spinner').style.opacity = "100%";
+
             fetch('http://localhost:8080/api/upload/' + student_id, {
                 method: 'POST',
                 body: formData
             })
                 .then(response => response.json())
                 .then(data => {
-                    let array = [];
+                    document.getElementById('upload-spinner').style.opacity = "0%";
+                    document.getElementById('score').innerText += 'Score: ' + data.grade[0] + ' / ' + data.grade[1];
                     data.cases.forEach((testcase) => {
-                        array.push(testcase);
+                        let result =
+                            '<h4>'+testcase+'</h4>';
+                        document.getElementById('autograder').innerHTML += result;
                     });
                 })
         }

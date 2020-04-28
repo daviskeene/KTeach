@@ -9,10 +9,12 @@ fun palindrome(str: String?) : Boolean {
     // Your method declaration should go here, and return the palindrome as a String.
     // Remember: can String be null according to the function declaration?	
     if (str == null) {
-	return false
+	    return false
     }
 
-    return str.reversed() == str
+    return str.toLowerCase()
+        .replace("""[\W]""".toRegex(), "")
+        .let {it == it.reversed() }
 }
 
 //    palindrome("racecar") // should return true
