@@ -82,7 +82,13 @@ fun Application.api() { // Extension function for Application called adder()
             }
         }
 
-        // Add stuents and teachers
+        get("api/assignments/{id}") {
+            val student_id = call.parameters["id"]!!
+            val assignments = availableAssignments(student_id)
+            call.respond(assignments)
+        }
+
+        // Add stuff to api
         post("/api/firestore/add/{doctype}/") {
             val doctype = call.parameters["doctype"]!!
             try {
@@ -119,7 +125,7 @@ fun Application.api() { // Extension function for Application called adder()
                     "Incorrect email or password"
                 })
             }
-            result?.let { it1 -> call.respond(it1) }
+            call.respond(result!!)
         }
 
         post("/api/upload/{student_id}") {

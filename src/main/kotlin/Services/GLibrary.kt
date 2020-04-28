@@ -233,3 +233,11 @@ fun addNewAssignment(classroom_id: String, title : String, desc : String, proble
 
     return temp_assignment
 }
+
+fun getAssignment(id: String) : MutableMap<String, Any>? {
+    return getDocumentFromDB(
+        Constants.assignments_col,
+        id,
+        Constants.db
+    )
+}

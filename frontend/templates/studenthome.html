@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/landing-page.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">KTeach: The Kotlin Classroom</a>
+        <a class="btn btn-primary" href="authentication.html" id="username"></a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="col-md-12" id="assignments">
+        <script>
+            let user_json = JSON.parse(localStorage.getItem('user'));
+            console.log(user_json);
+            document.getElementById("username").innerText = "Hi, ".concat(user_json["first_name"]);
+
+            // load assignments dynamically
+            // function addResult(title, descr, problem, tests) {
+            //     resultTemp =
+            //         '<h1>' + title + '</h1>'+
+            //         '<p>' + descr + '</p>' +
+            //         '<hr>';
+            //     $(resultTemp).appendTo( "#Disp" );
+            // }
+
+            // Get assignments from currently logged in user
+            fetch('http://localhost:8080/api/assignments/'+user_json["id"])
+                .then((res) => {
+                    return res.json()
+                })
+                .then((data) => {
+                    data.forEach((assignment) =>  {
+                        const {title, description, problem, test} = assignment;
+                        // addResult(title, description)
+                        result = '<h2> Assignments: </h2>'
+                        result +=
+                            '<h1>' + title + '</h1>'+
+                            '<p>' + description + '</p>' +
+                            '<hr>';
+                        document.getElementById('assignments').innerHTML = result;
+                    })
+                })
+        </script>
+    </div>
+</div>
+
+</body>
+</html>

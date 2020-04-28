@@ -130,10 +130,10 @@
             body: json
         })
             .then(function (response) {
-                return response.text();
+                return response.json();
             })
             .then(function (text) {
-                console.log(text);
+                localStorage.setItem('user', JSON.stringify(text));
             })
             .then(function (error) {
                 console.error(error);
@@ -155,7 +155,8 @@
                 object['password'] = value;
             }
         });
-        var json = JSON.stringify(object);
+        let json = JSON.stringify(object);
+        console.log(json);
 
         fetch('http://localhost:8080/api/login/', {
             method: 'POST',
@@ -165,9 +166,11 @@
             body: json
         })
             .then(function (response) {
-                return response.text();
+                // Store returned object to local storage
+                return response.json();
             })
             .then(function (text) {
+                localStorage.setItem('user', JSON.stringify(text));
                 console.log(text);
             })
             .then(function (error) {
