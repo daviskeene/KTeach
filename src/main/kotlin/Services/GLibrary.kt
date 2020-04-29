@@ -96,15 +96,15 @@ fun addNewStudent(fname: String, lname: String, pwd: String, email: String, clas
         .collection(Constants.students_col)
         .document(id)
 
-    doc_ref.set(temp_student!!)
-
     // Add student to classroom
-    val classroom = getClassroom(classroom_id)
-    val students: MutableList<String> = classroom?.get("students") as MutableList<String>
+    val classroom = getClassroom(classroom_id) ?: return null
+    val students: MutableList<String> = classroom.get("students") as MutableList<String>
     students.add(id)
     classroom.set("students", students)
     val class_ref = Constants.db.collection(Constants.classrooms_col).document(classroom_id)
     class_ref.set(classroom)
+
+    doc_ref.set(temp_student!!)
 
     return temp_student
 }

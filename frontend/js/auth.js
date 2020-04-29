@@ -16,9 +16,26 @@ $(function() {
 
 });
 
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+if (getUrlVars().hasOwnProperty("classroom")) {
+    document.getElementById('login-form').style.display = "none";
+    document.getElementById('register-form').style.display = "block";
+    document.getElementById('classroom_id').setAttribute('value', getUrlVars()["classroom"]);
+}
+
 const registerForm = document.getElementById("register-form");
 registerForm.addEventListener('submit', function (e) {
     e.preventDefault();
+
+    document.getElementById('alert').style.opacity = 0;
+    document.getElementById('alert').innerText = "";
 
     const registerFormData = new FormData(this);
     var object = {};
@@ -39,7 +56,13 @@ registerForm.addEventListener('submit', function (e) {
             return response.json();
         })
         .then(function (text) {
-            localStorage.setItem('user', JSON.stringify(text));
+            if (text === null) {
+                document.getElementById('alert').style.opacity = 100;
+                document.getElementById('alert').innerText = "Invalid classroom code!";
+                throw new Error("Invalid classroom code!");
+            } else {
+                localStorage.setItem('user', JSON.stringify(text));
+            }
         })
         .then(function (error) {
             console.error(error);
@@ -80,7 +103,7 @@ loginForm.addEventListener('submit', function (e) {
         .then(function (text) {
             if (text === null) {
                 document.getElementById('alert').style.opacity = 100;
-                document.getElementById('alert').innerText = "Invalid Login Attempt!";
+                document.getElementById('alert').innerText = "Invalid Login Credentials!";
                 throw new Error("Invalid login attempt!");
             } else {
                 localStorage.setItem('user', JSON.stringify(text));

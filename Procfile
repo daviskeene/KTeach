@@ -1,0 +1,1 @@
+web: java -jar build/libs/hello-1.0-SNAPSHOT-all.jar

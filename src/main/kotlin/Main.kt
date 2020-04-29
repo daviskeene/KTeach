@@ -125,7 +125,13 @@ fun Application.api() { // Extension function for Application called adder()
                 )
                 else -> throw Exception("$doctype cannot be added.")
             }
-            response?.let { it1 -> call.respond(it1) }
+            if (response == null) {
+                call.respond({
+                    HttpStatusCode.BadRequest
+                    "Invalid Input"
+                })
+            }
+                call.respond(response!!);
             } catch (e: java.lang.Exception) {
                 e.printStackTrace()
             }
