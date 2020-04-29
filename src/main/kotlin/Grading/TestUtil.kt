@@ -12,7 +12,7 @@ data class Case(val name: String, val weight: Double = 1.0, val code: () -> Bool
     }
 }
 
-fun sumScore(cases: List<Case>) : Pair<Double, Double> {
+fun sumScore(cases: List<Case>): Pair<Double, Double> {
     var score = 0.0
     var totalScore = 0.0
     for (case in cases) {
@@ -23,7 +23,7 @@ fun sumScore(cases: List<Case>) : Pair<Double, Double> {
     return Pair(score, totalScore)
 }
 
-fun computeScore(cases: List<Case>) : Double {
+fun computeScore(cases: List<Case>): Double {
     val (score, total) = sumScore(cases)
     return 100 * (score / total)
 }

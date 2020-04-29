@@ -3,8 +3,9 @@ package Services
 /* Authentication backend methods and helper functions */
 
 // DB Entry & Retrieval
-import com.google.cloud.firestore.FirestoreOptions
 import com.google.cloud.firestore.Firestore
+import com.google.cloud.firestore.FirestoreOptions
+import java.lang.Exception
 import java.util.*
 import kotlin.streams.asSequence
 
@@ -31,7 +32,20 @@ class Constants {
     }
 }
 
-fun randomString(length: Long) : String {
+fun getDB() : Any? {
+    try {
+        val firestore =  FirestoreOptions.newBuilder()
+            .setTimestampsInSnapshotsEnabled(true)
+            .build()
+            .service
+    } catch (e: Exception) {
+        e.printStackTrace()
+        return null
+    }
+    return 0
+}
+
+fun randomString(length: Long): String {
     return Random().ints(length, 0, Constants.alphabet.length)
         .asSequence()
         .map(Constants.alphabet::get)
@@ -39,7 +53,7 @@ fun randomString(length: Long) : String {
 }
 
 // Returns a document from the firestore instance given path
-fun getDocumentFromDB(col: String, doc: String,  db: Firestore) : MutableMap<String, Any>? {
+fun getDocumentFromDB(col: String, doc: String, db: Firestore): MutableMap<String, Any>? {
     val data = db.collection(col).document(doc)
         .get()
         .get()
@@ -48,7 +62,7 @@ fun getDocumentFromDB(col: String, doc: String,  db: Firestore) : MutableMap<Str
 }
 
 // Generate new ID
-fun createID(uname: String, pwd: String) : String {
+fun createID(uname: String, pwd: String): String {
     val input = "$uname$pwd".format(uname, pwd)
     val output = hash_string_md5(input)
     return output
@@ -57,7 +71,7 @@ fun createID(uname: String, pwd: String) : String {
 // Student Methods
 
 // Return student template
-fun getStudentTemplate() : MutableMap<String, Any>? {
+fun getStudentTemplate(): MutableMap<String, Any>? {
     val template = getDocumentFromDB(
         Constants.students_col,
         Constants.student_form,
@@ -67,7 +81,7 @@ fun getStudentTemplate() : MutableMap<String, Any>? {
 }
 
 // Add student to the firestore
-fun addNewStudent(fname: String, lname: String, pwd: String, email: String, classroom_id: String) : MutableMap<String, Any>? {
+fun addNewStudent(fname: String, lname: String, pwd: String, email: String, classroom_id: String): MutableMap<String, Any>? {
     val id = createID(email, pwd)
     // Get the student template
     val temp_student = getStudentTemplate()
@@ -86,7 +100,7 @@ fun addNewStudent(fname: String, lname: String, pwd: String, email: String, clas
 
     // Add student to classroom
     val classroom = getClassroom(classroom_id)
-    val students : MutableList<String> = classroom?.get("students") as MutableList<String>
+    val students: MutableList<String> = classroom?.get("students") as MutableList<String>
     students.add(id)
     classroom.set("students", students)
     val class_ref = Constants.db.collection(Constants.classrooms_col).document(classroom_id)
@@ -95,7 +109,7 @@ fun addNewStudent(fname: String, lname: String, pwd: String, email: String, clas
     return temp_student
 }
 
-fun getStudent(id: String) : MutableMap<String, Any>? {
+fun getStudent(id: String): MutableMap<String, Any>? {
     return getDocumentFromDB(
         Constants.students_col,
         id,
@@ -104,7 +118,7 @@ fun getStudent(id: String) : MutableMap<String, Any>? {
 }
 
 // Teacher methods
-fun getTeacherTemplate() : MutableMap<String, Any>? {
+fun getTeacherTemplate(): MutableMap<String, Any>? {
     return getDocumentFromDB(
         Constants.teachers_col,
         Constants.teacher_form,
@@ -112,7 +126,7 @@ fun getTeacherTemplate() : MutableMap<String, Any>? {
     )
 }
 
-fun addNewTeacher(fname: String, lname: String, pwd: String, email: String) : MutableMap<String, Any>? {
+fun addNewTeacher(fname: String, lname: String, pwd: String, email: String): MutableMap<String, Any>? {
     val id = createID(email, pwd)
     val temp_teacher = getTeacherTemplate()
     // Set fields
@@ -128,14 +142,14 @@ fun addNewTeacher(fname: String, lname: String, pwd: String, email: String) : Mu
     doc_ref.set(temp_teacher!!)
 
     val classroom = addNewClassroom(email, pwd, true)
-    val courses : MutableList<String> = temp_teacher.get("courses") as MutableList<String>
+    val courses: MutableList<String> = temp_teacher.get("courses") as MutableList<String>
     courses.add(classroom?.get("id") as String)
     temp_teacher.set("courses", courses)
     doc_ref.set(temp_teacher)
     return temp_teacher
 }
 
-fun getTeacher(id: String) : MutableMap<String, Any>? {
+fun getTeacher(id: String): MutableMap<String, Any>? {
     return getDocumentFromDB(
         Constants.teachers_col,
         id,
@@ -144,7 +158,7 @@ fun getTeacher(id: String) : MutableMap<String, Any>? {
 }
 
 // Classroom methods
-fun getClassroomTemplate() : MutableMap<String, Any>? {
+fun getClassroomTemplate(): MutableMap<String, Any>? {
     return getDocumentFromDB(
         Constants.classrooms_col,
         Constants.classroom_form,
@@ -153,7 +167,7 @@ fun getClassroomTemplate() : MutableMap<String, Any>? {
 }
 
 // All classrooms must have a teacher associated with them
-fun addNewClassroom(teacherEmail : String, pwd: String, newTeacher: Boolean) : MutableMap<String, Any>? {
+fun addNewClassroom(teacherEmail: String, pwd: String, newTeacher: Boolean): MutableMap<String, Any>? {
     // First, make sure that the teacher actually exists.
     val teacher_id = createID(teacherEmail, pwd)
     if (!newTeacher) {
@@ -173,7 +187,7 @@ fun addNewClassroom(teacherEmail : String, pwd: String, newTeacher: Boolean) : M
 
     // Add course to teacher
     var teacher = getTeacher(teacher_id)
-    val courses : MutableList<String> = teacher?.get("courses") as MutableList<String>
+    val courses: MutableList<String> = teacher?.get("courses") as MutableList<String>
     courses.add(id)
     teacher.set("courses", courses)
 
@@ -191,7 +205,7 @@ fun addNewClassroom(teacherEmail : String, pwd: String, newTeacher: Boolean) : M
     return temp_classroom
 }
 
-fun getClassroom(classroom_id: String) : MutableMap<String, Any>? {
+fun getClassroom(classroom_id: String): MutableMap<String, Any>? {
     return getDocumentFromDB(
         Constants.classrooms_col,
         classroom_id,
@@ -200,7 +214,7 @@ fun getClassroom(classroom_id: String) : MutableMap<String, Any>? {
 }
 
 // Assignments methods
-fun getAssignmentTemplate() : MutableMap<String, Any>? {
+fun getAssignmentTemplate(): MutableMap<String, Any>? {
     return getDocumentFromDB(
         Constants.assignments_col,
         Constants.assignment_form,
@@ -208,8 +222,13 @@ fun getAssignmentTemplate() : MutableMap<String, Any>? {
     )
 }
 
-fun addNewAssignment(classroom_id: String, title : String, desc : String, problem : String,
-                     tests : String) : MutableMap<String, Any>? {
+fun addNewAssignment(
+    classroom_id: String,
+    title: String,
+    desc: String,
+    problem: String,
+    tests: String
+): MutableMap<String, Any>? {
 
     val id = randomString(8)
     val temp_assignment = getAssignmentTemplate()
@@ -226,7 +245,7 @@ fun addNewAssignment(classroom_id: String, title : String, desc : String, proble
 
     // Link it to a classroom
     val classroom = getClassroom(classroom_id)
-    val assignments : MutableList<String> = classroom?.get("assignments") as MutableList<String>
+    val assignments: MutableList<String> = classroom?.get("assignments") as MutableList<String>
     assignments.add(id)
     classroom.set("assignments", assignments)
     val class_ref = Constants.db.collection(Constants.classrooms_col).document(classroom_id)
@@ -235,7 +254,7 @@ fun addNewAssignment(classroom_id: String, title : String, desc : String, proble
     return temp_assignment
 }
 
-fun getAssignment(id: String) : MutableMap<String, Any>? {
+fun getAssignment(id: String): MutableMap<String, Any>? {
     return getDocumentFromDB(
         Constants.assignments_col,
         id,

@@ -1,5 +1,8 @@
 let user_json = JSON.parse(localStorage.getItem('user'));
-console.log(user_json);
+if (user_json === null) {
+    window.location.replace("authentication.html");
+    throw new Error("Incorrect login attempt!");
+}
 document.getElementById("username").innerText = "Hi, ".concat(user_json["first_name"]);
 // Get assignments from currently logged in user
 fetch('http://localhost:8080/api/assignments/'+user_json["id"])
@@ -17,4 +20,4 @@ fetch('http://localhost:8080/api/assignments/'+user_json["id"])
                 '<hr>';
             document.getElementById('assignments').innerHTML += result;
         })
-    })
+    });

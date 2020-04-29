@@ -16,6 +16,7 @@ const handleImageUpload = event => {
     formData.append('test', testpath);
     console.log(student_id);
     console.log(formData.get('file'));
+    console.log(formData.get('test'));
 
     // Start spinner
     document.getElementById('upload-spinner').style.opacity = "100%";
@@ -34,4 +35,4 @@ const handleImageUpload = event => {
                 document.getElementById('autograder').innerHTML += result;
             });
         })
-}
+};

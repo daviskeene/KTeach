@@ -1,8 +1,11 @@
 import java.util.regex.Pattern.compile
 
+// apply(plugin = "com.google.cloud.tools.appengine")
+
 plugins {
     kotlin("jvm") version "1.3.61"
     id("org.jlleitschuh.gradle.ktlint") version "9.2.1"
+    id("com.github.johnrengelman.shadow") version "5.2.0"
     distribution
 }
 
@@ -39,5 +42,11 @@ tasks {
     }
     compileTestKotlin {
         kotlinOptions.jvmTarget = "1.8"
+    }
+}
+val mainClass = "hello.MainKt"
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = mainClass
     }
 }

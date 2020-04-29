@@ -24,4 +24,4 @@ fetch('http://localhost:8080/api/firestore/Assignments/'+assignment_id)
         button.setAttribute('href', problem);
         let testpath = document.getElementById("testpath");
         testpath.setAttribute('value', test);
-    })
+    });

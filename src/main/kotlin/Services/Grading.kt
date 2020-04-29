@@ -1,17 +1,17 @@
 package Services
 
-fun computeGrade(possible: Double, total: Double) : Double {
+fun computeGrade(possible: Double, total: Double): Double {
     return possible / total
 }
 
 fun updateGrade(student_id: String, possible: Double, total: Double) {
     var student_ref = getStudent(student_id)
     student_ref?.set("possible", student_ref.get("possible") as Double + possible)
-    student_ref?.set("total", student_ref.get("total") as Double + possible)
+    student_ref?.set("total", student_ref.get("total") as Double + total)
     student_ref?.set("grade", (student_ref.get("possible") as Double) / student_ref.get("total") as Double)
 }
 
-fun availableAssignments(student_id: String) : MutableList<MutableMap<String, Any>?> {
+fun availableAssignments(student_id: String): MutableList<MutableMap<String, Any>?> {
     var result: MutableList<MutableMap<String, Any>?> = mutableListOf()
     try {
         var student_ref = getStudent(student_id)

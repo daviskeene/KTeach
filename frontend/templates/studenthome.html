@@ -13,6 +13,8 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/landing-page.min.css" rel="stylesheet">
+
+    <link href="../css/studenthome.css">
 </head>
 <body>
 
@@ -24,12 +26,20 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container" id="page-content">
     <div class="col-md-12" id="assignments">
         <h2>Assignments:</h2>
         <script src="../js/loadhome.js"></script>
     </div>
 </div>
+
+<footer id="sticky-footer" class="footer">
+    <div class="container text-center">
+        <a class="btn btn-warning" href="index.html" id="logout" onclick="localStorage.removeItem('user')">Logout</a>
+        <br>
+        <small>Copyright &copy; KTeach 2020</small>
+    </div>
+</footer>
 
 </body>
 </html>

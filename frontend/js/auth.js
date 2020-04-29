@@ -49,6 +49,9 @@ registerForm.addEventListener('submit', function (e) {
 
 const loginForm = document.getElementById("login-form");
 loginForm.addEventListener('submit', function (e) {
+    // Clear alert
+    document.getElementById('alert').style.opacity = 0;
+    document.getElementById('alert').innerText = "";
     e.preventDefault();
 
     const loginFormData = new FormData(this);
@@ -62,7 +65,6 @@ loginForm.addEventListener('submit', function (e) {
         }
     });
     let json = JSON.stringify(object);
-    console.log(json);
 
     fetch('http://localhost:8080/api/login/', {
         method: 'POST',
@@ -76,11 +78,17 @@ loginForm.addEventListener('submit', function (e) {
             return response.json();
         })
         .then(function (text) {
-            localStorage.setItem('user', JSON.stringify(text));
-            console.log(text);
+            if (text === null) {
+                document.getElementById('alert').style.opacity = 100;
+                document.getElementById('alert').innerText = "Invalid Login Attempt!";
+                throw new Error("Invalid login attempt!");
+            } else {
+                localStorage.setItem('user', JSON.stringify(text));
+                console.log(text);
+                window.location.replace("studenthome.html")
+            }
         })
         .then(function (error) {
             console.error(error);
-            window.location.replace("studenthome.html");
         });
 });
