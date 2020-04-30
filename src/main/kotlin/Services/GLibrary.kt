@@ -234,15 +234,25 @@ fun getClassroom(classroom_id: String): MutableMap<String, Any>? {
 
 // Gets classrooms with assignment data
 fun getClassroomVerbose(classroom_id: String) : MutableMap<String, Any>? {
-    println("verbose baby")
     val list : MutableList<MutableMap<String, Any>> = mutableListOf()
+    val assignmentIDs : MutableList<String> = mutableListOf()
     val classroom = getClassroom(classroom_id) as MutableMap<String, Any>
     val assignments = classroom?.get("assignments") as MutableList<String>
     for (assignment in assignments) {
         val assignment_data = getAssignment(assignment)
-        list.add(assignment_data!!)
+        if (assignment_data != null) {
+            list.add(assignment_data)
+            assignmentIDs.add(assignment_data["id"] as String)
+        }
     }
     classroom.set("assignments", list)
+    // update cloud instance
+    val classroom_ref = Constants.db
+        .collection(Constants.classrooms_col)
+        .document(classroom_id)
+    val data = classroom_ref.get().get().data!!
+    data.set("assignments", assignmentIDs)
+    classroom_ref.set(data)
     return classroom
 }
 

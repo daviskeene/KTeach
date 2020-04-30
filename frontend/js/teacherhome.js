@@ -8,11 +8,16 @@ function getUrlVars() {
     });
     return vars;
 }
+// Reset dynamic elements on page
+document.getElementById('about-content').style.display = "none";
+document.getElementById('banner-text').style.display = "none";
 document.getElementById('content').innerHTML = "";
+let progress = document.getElementById('progress-bar');
 courses.forEach((course) => {
     // Get the name of the course
     fetch('http://localhost:8080/api/firestore/Classrooms/'+course)
         .then((response) => {
+            progress.style.width = "50%";
             return response.json()
         })
         .then((data) => {
@@ -24,6 +29,7 @@ courses.forEach((course) => {
                 if (getUrlVars()["classroom"] === id) {
                     // Load the page content
                     document.getElementById("banner-text").innerText = "Assignments for "+name;
+                    document.getElementById('banner-text').style.display = "block";
                     assignments.forEach((assignment) => {
                         const {title, description, problem, test, id} = assignment;
                         let result =
@@ -31,76 +37,19 @@ courses.forEach((course) => {
                             '<p>' + description + '</p>' +
                             '<a class="btn btn-primary" type="button" href="" id="username" data-toggle="modal" data-target="#modalAssignmentForm" data-title="'+title+'" data-desc="'+description+'"' +
                             ' data-problem="'+problem+'" data-test="'+test+'" data-id="'+id+'">Edit Assignment</a>'+
+                            '<a class="btn btn-danger mb-0 mx-2" style="color: white" type="button" data-toggle="modal" data-target="#modalConfirmation" data-id="'+id+'" data-title="'+title+'">Delete Assignment</a>'+
                             '<hr>';
                         document.getElementById('content').innerHTML += result;
-                    })
-
+                    });
+                    document.getElementById('add-assignment-div').style.display = "block";
+                    progress.style.width = "100%";
                 }
             } else {
+                progress.style.width = "100%";
+                document.getElementById('about-content').style.display = "inline";
                 let json = JSON.parse(localStorage.getItem('user'));
-                document.getElementById("banner-text").innerText = "Hello, "+json["first_name"]+"! Click on a class to the left to view, edit and add assignments.";
+                document.getElementById("banner-text").innerText += " " + json["first_name"]+"!";
+                document.getElementById('banner-text').style.display = "block";
             }
         })
-});
-
-$('#modalAssignmentForm').on('show.bs.modal', function (event) {
-    let button = $(event.relatedTarget);
-    let title = button.data('title');
-    let desc = button.data('desc');
-    let problem = button.data('problem');
-    let test = button.data('test');
-    let id = button.data('id');
-
-    let modal = $(this);
-    $('#defaultForm-title').val(title);
-    $('#defaultForm-description').val(desc);
-    $('#defaultForm-problem').val(problem);
-    $('#defaultForm-test').val(test);
-    $('#defaultForm-id').val(id);
-});
-
-$('#modal-form').on('submit', function (e) {
-    e.preventDefault();
-    if ($("#defaultForm-id").val() !== "") {
-        let data = {
-            "id" : $("#defaultForm-id").val(),
-            "title" : $("#defaultForm-title").val(),
-            "description" : $("#defaultForm-description").val(),
-            "problem" : $("#defaultForm-problem").val(),
-            "tests" : $("#defaultForm-test").val(),
-        };
-        $.ajax({
-            url : 'http://localhost:8080/api/firestore/update/Assignments/'+$("#defaultForm-id").val(),
-            type: "POST",
-            data: JSON.stringify(data),
-            contentType: "application/json",
-            success: function (data) {
-                location.reload();
-            },
-            fail: function (data) {
-                console.log(data);
-            }
-        });
-    } else {
-        let classroom_id = getUrlVars()["classroom"];
-        let data = {
-            "classroom_id" : classroom_id,
-            "title" : $("#defaultForm-title").val(),
-            "description" : $("#defaultForm-description").val(),
-            "problem" : $("#defaultForm-problem").val(),
-            "tests" : $("#defaultForm-test").val(),
-        };
-        $.ajax({
-            url : 'http://localhost:8080/api/firestore/add/assignment/',
-            type: "POST",
-            data: JSON.stringify(data),
-            contentType: "application/json",
-            success: function (data) {
-                location.reload();
-            },
-            fail: function (data) {
-                console.log(data);
-            }
-        });
-    }
 });

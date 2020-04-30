@@ -78,7 +78,6 @@ fun Application.api() { // Extension function for Application called adder()
 
                 val col = call.parameters["collection"]!!
                 val doc = call.parameters["document"]!!
-                println(col)
 
                 var data : MutableMap<String, Any>? = if (col == "Classrooms") getClassroomVerbose(doc) else getDocumentFromDB(col, doc, db)
 
@@ -103,7 +102,7 @@ fun Application.api() { // Extension function for Application called adder()
             getDB()
         }
 
-        // Add stuff to api
+        // Add documents to firestore
         post("/api/firestore/add/{doctype}/") {
             val doctype = call.parameters["doctype"]!!
             try {
@@ -136,6 +135,7 @@ fun Application.api() { // Extension function for Application called adder()
             }
         }
 
+        // Login endpoint
         post("/api/login/") {
             val request = call.receive<LoginRequest>()
             val result = login(request.email, request.password)
@@ -148,6 +148,7 @@ fun Application.api() { // Extension function for Application called adder()
             call.respond(result!!)
         }
 
+        // Update firestore documents
         post("api/firestore/update/{col}/{doc}") {
             val doctype = call.parameters["col"]!!
             val id = call.parameters["doc"]!!
@@ -182,7 +183,22 @@ fun Application.api() { // Extension function for Application called adder()
 
         }
 
+        // Delete documents
+        post("api/firestore/delete/{col}/{doc}") {
+            val doctype = call.parameters["col"]!!
+            val id = call.parameters["doc"]!!
+            try {
+                Constants.db.collection(doctype).document(id).delete()
+            } catch (e: java.lang.Exception) {
+                e.printStackTrace()
+                call.respond(HttpStatusCode.BadRequest,
+                    "Could not delete document")
+            }
+            call.respond(HttpStatusCode.OK,
+            "Document successfully deleted")
+        }
 
+        // Upload user solutions
         post("/api/upload/{student_id}") {
             val multipart = call.receiveMultipart()
             var studentID = call.parameters["student_id"]!!
