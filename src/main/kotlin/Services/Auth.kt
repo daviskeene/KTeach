@@ -24,7 +24,10 @@ fun login(email: String, pwd: String): MutableMap<String, Any>? {
         if (teacher == null) {
             return null
         }
+        // Set boolean for login
+        teacher.put("isTeacher", true)
         return teacher
     }
+    student.put("isTeacher", false)
     return student
 }

@@ -109,6 +109,15 @@ fun addNewStudent(fname: String, lname: String, pwd: String, email: String, clas
     return temp_student
 }
 
+fun updateStudent(
+    id: String,
+    firstName: String,
+    lastName: String,
+    pwd: String,
+    email: String) {
+
+}
+
 fun getStudent(id: String): MutableMap<String, Any>? {
     return getDocumentFromDB(
         Constants.students_col,
@@ -155,6 +164,16 @@ fun getTeacher(id: String): MutableMap<String, Any>? {
         id,
         Constants.db
     )
+}
+
+fun updateTeacher(
+    id: String,
+    firstName: String,
+    lastName: String,
+    pwd: String,
+    email: String
+) {
+
 }
 
 // Classroom methods
@@ -213,6 +232,20 @@ fun getClassroom(classroom_id: String): MutableMap<String, Any>? {
     )
 }
 
+// Gets classrooms with assignment data
+fun getClassroomVerbose(classroom_id: String) : MutableMap<String, Any>? {
+    println("verbose baby")
+    val list : MutableList<MutableMap<String, Any>> = mutableListOf()
+    val classroom = getClassroom(classroom_id) as MutableMap<String, Any>
+    val assignments = classroom?.get("assignments") as MutableList<String>
+    for (assignment in assignments) {
+        val assignment_data = getAssignment(assignment)
+        list.add(assignment_data!!)
+    }
+    classroom.set("assignments", list)
+    return classroom
+}
+
 // Assignments methods
 fun getAssignmentTemplate(): MutableMap<String, Any>? {
     return getDocumentFromDB(
@@ -252,6 +285,17 @@ fun addNewAssignment(
     class_ref.set(classroom)
 
     return temp_assignment
+}
+
+fun updateAssignment(id: String, title: String, description: String,
+                     problem: String, tests: String) {
+    val assignment = getAssignment(id)
+    assignment?.set("title", title)
+    assignment?.set("description", description)
+    assignment?.set("problem", problem)
+    assignment?.set("test", tests)
+    val assign_ref = Constants.db.collection(Constants.assignments_col).document(id)
+    assign_ref.set(assignment!!)
 }
 
 fun getAssignment(id: String): MutableMap<String, Any>? {

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/simple-sidebar.css" rel="stylesheet">
+    <style>
+        .btn-warning, .btn-warning:hover, .btn-warning:active, .btn-warning:visited {
+            background-color: #ff6600 !important;
+        }
+    </style>
+</head>
+<body>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+
+    <a class="btn btn-warning" id="menu-toggle" href="index.html" onclick="localStorage.removeItem('user')">Logout</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">My Classes</div>
+        <div class="list-group list-group-flush" id="classes-nav"></div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <h1 class="mt-4" id="banner-text"></h1>
+            <hr>
+            <div id="content" class="col-md-12"></div>
+        </div>
+        <div style="text-align: center;">
+            <a class="btn btn-success" type="button" href="" id="username" data-toggle="modal" data-target="#modalAssignmentForm">Add Assignment</a>
+        </div>
+    </div>
+
+    <!-- /#page-content-wrapper -->
+
+</div>
+
+<form id="modal-form" action="" method="post">
+<div class="modal fade" id="modalAssignmentForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Edit Assignment</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form mb-4">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input type="text" id="defaultForm-title" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="defaultForm-title">Title</label>
+                </div>
+
+                <div class="md-form mb-4">
+                    <i class="fas fa-lock prefix grey-text"></i>
+                    <input type="text" id="defaultForm-description" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="defaultForm-description">Description</label>
+                </div>
+
+                <div class="md-form mb-4">
+                    <i class="fas fa-lock prefix grey-text"></i>
+                    <input type="text" id="defaultForm-problem" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="defaultForm-problem">Problem File</label>
+                </div>
+
+                <div class="md-form mb-4">
+                    <i class="fas fa-lock prefix grey-text"></i>
+                    <input type="text" id="defaultForm-test" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="defaultForm-test">Test File</label>
+                </div>
+
+                <div class="md-form mb-4">
+                    <i class="fas fa-lock prefix grey-text"></i>
+                    <input type="text" id="defaultForm-id" class="form-control validate" disabled>
+                    <label data-error="wrong" data-success="right" for="defaultForm-id">Assignment ID</label>
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center" id="modal-submit">
+                <button type="submit" name="submit" class="btn btn-primary" style="color: white">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<!-- /#wrapper -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Menu Toggle Script -->
+<script src="../js/teacherhome.js"></script>
+
+</body>
+
+</body>
+</html>

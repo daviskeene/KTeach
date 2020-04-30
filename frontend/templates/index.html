@@ -35,7 +35,11 @@
           let user_json = JSON.parse(localStorage.getItem('user'));
           let button = document.getElementById("name");
           button.innerText = "Hi, ".concat(user_json["first_name"]);
-          button.setAttribute('href', 'studenthome.html')
+          if (user_json["isTeacher"]) {
+            button.setAttribute('href', 'teacherhome.html')
+          } else {
+            button.setAttribute('href', 'studenthome.html')
+          }
         }
       </script>
     </div>

@@ -23,8 +23,6 @@ import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import java.io.File
 import java.io.IOException
-import java.nio.file.Files
-import java.nio.file.Path
 import java.util.concurrent.TimeUnit
 
 fun hello(): String {
@@ -80,8 +78,9 @@ fun Application.api() { // Extension function for Application called adder()
 
                 val col = call.parameters["collection"]!!
                 val doc = call.parameters["document"]!!
+                println(col)
 
-                var data = getDocumentFromDB(col, doc, db)
+                var data : MutableMap<String, Any>? = if (col == "Classrooms") getClassroomVerbose(doc) else getDocumentFromDB(col, doc, db)
 
                 if (data != null) {
                     call.respond(data)
@@ -148,6 +147,41 @@ fun Application.api() { // Extension function for Application called adder()
             }
             call.respond(result!!)
         }
+
+        post("api/firestore/update/{col}/{doc}") {
+            val doctype = call.parameters["col"]!!
+            val id = call.parameters["doc"]!!
+            try {
+                val request = call.receive<AddItemRequest>()
+                val response = when (doctype) {
+                    "Students" -> updateStudent(
+                        id, request.first_name, request.last_name, request.pwd,
+                        request.email
+                    )
+                    "Teachers" -> updateTeacher(
+                        id, request.first_name, request.last_name, request.pwd,
+                        request.email
+                    )
+                    "Assignments" -> updateAssignment(
+                        id, request.title, request.description,
+                        request.problem, request.tests
+                    )
+                    else -> throw Exception("$doctype cannot be updated.")
+                }
+                if (response == null) {
+                    call.respond({
+                        HttpStatusCode.BadRequest
+                        "Invalid Input"
+                    })
+                }
+                call.respond(response!!);
+            } catch (e: java.lang.Exception) {
+                e.printStackTrace()
+            }
+
+
+        }
+
 
         post("/api/upload/{student_id}") {
             val multipart = call.receiveMultipart()

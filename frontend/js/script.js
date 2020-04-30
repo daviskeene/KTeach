@@ -1,4 +1,4 @@
-let basePath = 'http://localhost:8080/'
+let basePath = 'http://localhost:8080/';
 
 const userAction = () => {
     fetch(basePath + 'api/firestore/Students/test')

@@ -107,8 +107,14 @@ loginForm.addEventListener('submit', function (e) {
                 throw new Error("Invalid login attempt!");
             } else {
                 localStorage.setItem('user', JSON.stringify(text));
-                console.log(text);
-                window.location.replace("studenthome.html")
+                let user_json = JSON.parse(localStorage.getItem('user'));
+                console.log(user_json);
+                if (user_json["isTeacher"]) {
+                    window.location.replace('teacherhome.html')
+                }
+                else {
+                    window.location.replace("studenthome.html")
+                }
             }
         })
         .then(function (error) {
