@@ -44,7 +44,7 @@ registerForm.addEventListener('submit', function (e) {
     });
     var json = JSON.stringify(object);
 
-    fetch('http://167.99.53.134:8080/api/firestore/add/student/', {
+    fetch('//167.99.53.134:8080/api/firestore/add/student/', {
         method: 'POST',
         headers: {
             'Content-Type' : 'application/json'
@@ -89,7 +89,7 @@ loginForm.addEventListener('submit', function (e) {
     });
     let json = JSON.stringify(object);
 
-    fetch('http://167.99.53.134:8080/api/login/', {
+    fetch('//167.99.53.134:8080/api/login/', {
         method: 'POST',
         headers: {
             'Content-Type' : 'application/json'
