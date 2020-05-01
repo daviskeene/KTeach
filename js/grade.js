@@ -21,7 +21,7 @@ const handleImageUpload = event => {
     // Start spinner
     document.getElementById('upload-spinner').style.opacity = "100%";
 
-    fetch('http://167.99.53.134:8080/api/upload/' + student_id, {
+    fetch('https://167.99.53.134:8080/api/upload/' + student_id, {
         method: 'POST',
         body: formData
     })

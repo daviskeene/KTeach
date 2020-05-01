@@ -6,7 +6,7 @@ if (user_json === null) {
 document.getElementById("username").innerText = "Hi, ".concat(user_json["first_name"]);
 document.getElementById('progress-bar-student').style.width = "50%";
 // Get assignments from currently logged in user
-fetch('http://167.99.53.134:8080/api/assignments/'+user_json["id"])
+fetch('https://167.99.53.134:8080/api/assignments/'+user_json["id"])
     .then((res) => {
         return res.json()
     })
