@@ -232,7 +232,7 @@ fun Application.api() { // Extension function for Application called adder()
                 }
                 // Check to see if we uploaded a test file, or if we need to download one
                 if (testDirectory == null) {
-                    downloadFile("https://raw.githubusercontent.com/daviskeene/KTeach/master/file_test.kt", path)
+                    throw IOException("Test file not found in request!")
                 } else {
                     downloadFile(testDirectory!!, path)
                 }
