@@ -39,7 +39,8 @@ data class AddItemRequest(
     val title: String,
     val description: String,
     val problem: String,
-    val tests: String
+    val test: String,
+    val deadline: String
 )
 
 data class Student(val first_name: String, val last_name: String, val classroom_id: String, val email: String)
@@ -119,7 +120,7 @@ fun Application.api() { // Extension function for Application called adder()
                 "classroom" -> addNewClassroom(request.email, request.pwd, false)
                 "assignment" -> addNewAssignment(
                     request.classroom_id, request.title, request.description,
-                    request.problem, request.tests
+                    request.problem, request.test, request.deadline
                 )
                 else -> throw Exception("$doctype cannot be added.")
             }
@@ -165,7 +166,7 @@ fun Application.api() { // Extension function for Application called adder()
                     )
                     "Assignments" -> updateAssignment(
                         id, request.title, request.description,
-                        request.problem, request.tests
+                        request.problem, request.test, request.deadline
                     )
                     else -> throw Exception("$doctype cannot be updated.")
                 }

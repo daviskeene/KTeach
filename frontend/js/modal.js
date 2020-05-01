@@ -6,6 +6,7 @@ $('#modalAssignmentForm').on('show.bs.modal', function (event) {
     let problem = button.data('problem');
     let test = button.data('test');
     let id = button.data('id');
+    let deadline = button.data('deadline');
 
     let modal = $(this);
     $('#defaultForm-title').val(title);
@@ -13,6 +14,7 @@ $('#modalAssignmentForm').on('show.bs.modal', function (event) {
     $('#defaultForm-problem').val(problem);
     $('#defaultForm-test').val(test);
     $('#defaultForm-id').val(id);
+    $('#defaultForm-deadline').val(deadline);
 });
 
 $('#modal-form').on('submit', function (e) {
@@ -23,7 +25,8 @@ $('#modal-form').on('submit', function (e) {
             "title" : $("#defaultForm-title").val(),
             "description" : $("#defaultForm-description").val(),
             "problem" : $("#defaultForm-problem").val(),
-            "tests" : $("#defaultForm-test").val(),
+            "test" : $("#defaultForm-test").val(),
+            "deadline" : $("#defaultForm-deadline").val()
         };
         $.ajax({
             url : 'http://localhost:8080/api/firestore/update/Assignments/'+$("#defaultForm-id").val(),
@@ -44,7 +47,8 @@ $('#modal-form').on('submit', function (e) {
             "title" : $("#defaultForm-title").val(),
             "description" : $("#defaultForm-description").val(),
             "problem" : $("#defaultForm-problem").val(),
-            "tests" : $("#defaultForm-test").val(),
+            "test" : $("#defaultForm-test").val(),
+            "deadline" : $("#defaultForm-deadline").val(),
         };
         $.ajax({
             url : 'http://localhost:8080/api/firestore/add/assignment/',

@@ -11,12 +11,13 @@ fetch('http://localhost:8080/api/assignments/'+user_json["id"])
     })
     .then((data) => {
         data.forEach((assignment) =>  {
-            const {title, description, problem, test, id} = assignment;
+            const {title, description, problem, test, id, deadline} = assignment;
             let ref = "assignment.html?id=".concat(id);
             let result =
                 '<h1>' + title + '</h1>'+
                 '<p>' + description + '</p>' +
                 '<a class="btn btn-primary" href='+ref+ ' id="username">View Assignment</a>'+
+                '<p class="text-muted my-2">Deadline: '+deadline+'</p>'+
                 '<hr>';
             document.getElementById('assignments').innerHTML += result;
         });

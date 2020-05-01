@@ -31,12 +31,12 @@ courses.forEach((course) => {
                     document.getElementById("banner-text").innerText = "Assignments for "+name;
                     document.getElementById('banner-text').style.display = "block";
                     assignments.forEach((assignment) => {
-                        const {title, description, problem, test, id} = assignment;
+                        const {title, description, problem, test, id, deadline} = assignment;
                         let result =
                             '<h1>' + title + '</h1>'+
                             '<p>' + description + '</p>' +
                             '<a class="btn btn-primary" type="button" href="" id="username" data-toggle="modal" data-target="#modalAssignmentForm" data-title="'+title+'" data-desc="'+description+'"' +
-                            ' data-problem="'+problem+'" data-test="'+test+'" data-id="'+id+'">Edit Assignment</a>'+
+                            ' data-problem="'+problem+'" data-test="'+test+'" data-id="'+id+'" data-deadline="'+deadline+'">Edit Assignment</a>'+
                             '<a class="btn btn-danger mb-0 mx-2" style="color: white" type="button" data-toggle="modal" data-target="#modalConfirmation" data-id="'+id+'" data-title="'+title+'">Delete Assignment</a>'+
                             '<hr>';
                         document.getElementById('content').innerHTML += result;

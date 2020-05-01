@@ -5,7 +5,11 @@ package Services
 // DB Entry & Retrieval
 import com.google.cloud.firestore.Firestore
 import com.google.cloud.firestore.FirestoreOptions
+import org.joda.time.DateTime
+import org.joda.time.LocalDate
+import org.joda.time.LocalDateTime
 import java.lang.Exception
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.streams.asSequence
 
@@ -270,7 +274,8 @@ fun addNewAssignment(
     title: String,
     desc: String,
     problem: String,
-    tests: String
+    tests: String,
+    deadline: String
 ): MutableMap<String, Any>? {
 
     val id = randomString(8)
@@ -279,9 +284,10 @@ fun addNewAssignment(
     temp_assignment?.set("title", title)
     temp_assignment?.set("description", desc)
     temp_assignment?.set("problem", problem)
-    temp_assignment?.set("tests", tests)
+    temp_assignment?.set("test", tests)
     temp_assignment?.set("id", id)
-
+    // deadline logic
+    temp_assignment?.set("deadline", deadline)
     // Add to firestore
     val doc_ref = Constants.db.collection(Constants.assignments_col).document(id)
     doc_ref.set(temp_assignment!!)
@@ -298,12 +304,13 @@ fun addNewAssignment(
 }
 
 fun updateAssignment(id: String, title: String, description: String,
-                     problem: String, tests: String) {
+                     problem: String, tests: String, deadline: String) {
     val assignment = getAssignment(id)
     assignment?.set("title", title)
     assignment?.set("description", description)
     assignment?.set("problem", problem)
     assignment?.set("test", tests)
+    assignment?.set("deadline", deadline)
     val assign_ref = Constants.db.collection(Constants.assignments_col).document(id)
     assign_ref.set(assignment!!)
 }
