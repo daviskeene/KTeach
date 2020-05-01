@@ -15,7 +15,7 @@ document.getElementById('content').innerHTML = "";
 let progress = document.getElementById('progress-bar');
 courses.forEach((course) => {
     // Get the name of the course
-    fetch('https://167.99.53.134:8080/api/firestore/Classrooms/'+course)
+    fetch('http://167.99.53.134:8080/api/firestore/Classrooms/'+course)
         .then((response) => {
             progress.style.width = "50%";
             return response.json()
