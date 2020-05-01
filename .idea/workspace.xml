@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5682e2d5-131e-4d5c-a7be-218048cf1ce9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/js/modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Grading/file.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Grading/file_test.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/templates/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file.kt" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/perilous-palindromes/file.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/perilous-palindromes/file_test.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/teacherhome.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/teacherhome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/js/loadassignment.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/loadassignment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/js/loadhome.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/loadhome.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/templates/assignment.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/assignment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/assignments-page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/studenthome.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/studenthome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/templates/teacherhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/teacherhome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Grading/TestUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Grading/TestUtil.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -63,58 +60,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt">
+        <entry file="file://$PROJECT_DIR$/frontend/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4843">
-              <caret line="190" column="70" selection-start-line="190" selection-start-column="70" selection-end-line="190" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            <state relative-caret-position="560">
+              <caret line="119" column="17" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file_test.kt">
+        <entry file="file://$PROJECT_DIR$/frontend/templates/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+            <state relative-caret-position="569">
+              <caret line="63" column="340" selection-start-line="63" selection-start-column="340" selection-end-line="63" selection-end-column="340" />
               <folding>
-                <element signature="e#17#70#0" expanded="true" />
+                <element signature="e#8306#8312#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/TestUtil.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignments/perilous-palindromes/file_test.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/js/auth.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2552">
-              <caret line="88" column="7" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -122,21 +83,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/templates/teacherhome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="117" column="67" selection-start-line="117" selection-start-column="67" selection-end-line="117" selection-end-column="67" />
+            <state relative-caret-position="1239">
+              <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#body#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/js/grade.js">
+        <entry file="file://$PROJECT_DIR$/frontend/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-157">
-              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            <state relative-caret-position="841">
+              <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -144,11 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/js/teacherhome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1381">
+            <state relative-caret-position="1566">
               <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
-              <folding>
-                <element signature="n#style#0;n#a#1;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -156,8 +113,50 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/templates/studenthome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1073">
-              <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+            <state relative-caret-position="667">
+              <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/js/auth.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/js/grade.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/js/loadassignment.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="87">
+              <caret line="3" column="79" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/templates/assignment.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -169,9 +168,9 @@
       <list>
         <option value="Kotlin File" />
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Kotlin Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -183,7 +182,15 @@
       <find>index.html</find>
       <find>input</find>
       <find>form</find>
+      <find>sessionStorage</find>
+      <find>localStorage</find>
+      <find>hr</find>
+      <find>masthead</find>
     </findStrings>
+    <replaceStrings>
+      <replace>localStorage</replace>
+      <replace>sessionStorage</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -191,7 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/kotlin/Auth.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Library.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/GLibrary.kt" />
         <option value="$PROJECT_DIR$/DEVELOPMENT.md" />
@@ -213,50 +219,49 @@
         <option value="$PROJECT_DIR$/.gitattributes" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Services/Grading.kt" />
         <option value="$PROJECT_DIR$/build.gradle.kts" />
-        <option value="$PROJECT_DIR$/frontend/js/loadassignment.js" />
         <option value="$PROJECT_DIR$/clean.sh" />
         <option value="$PROJECT_DIR$/compile.sh" />
         <option value="$PROJECT_DIR$/run.sh" />
-        <option value="$PROJECT_DIR$/frontend/js/grade.js" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/frontend/css/studenthome.css" />
-        <option value="$PROJECT_DIR$/frontend/templates/studenthome.html" />
         <option value="$PROJECT_DIR$/frontend/vendor/bootstrap/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/frontend/templates/authentication.html" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Services/Auth.kt" />
-        <option value="$PROJECT_DIR$/frontend/js/auth.js" />
         <option value="$PROJECT_DIR$/frontend/js/script.js" />
-        <option value="$PROJECT_DIR$/frontend/templates/index.html" />
-        <option value="$PROJECT_DIR$/frontend/js/loadhome.js" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/Main.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt" />
-        <option value="$PROJECT_DIR$/frontend/templates/assignment.html" />
-        <option value="$PROJECT_DIR$/frontend/js/teacherhome.js" />
         <option value="$PROJECT_DIR$/frontend/js/modal.js" />
-        <option value="$PROJECT_DIR$/frontend/templates/teacherhome.html" />
         <option value="$PROJECT_DIR$/assignments/perilous-palindromes/file.kt" />
         <option value="$PROJECT_DIR$/assignments/dashing-dataclasses/file.kt" />
         <option value="$PROJECT_DIR$/assignments/dashing-dataclasses/file_test.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/Grading/file.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/Grading/file_test.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Grading/TestUtil.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Grading/file_test.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Grading/file.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Main.kt" />
+        <option value="$PROJECT_DIR$/frontend/js/auth.js" />
+        <option value="$PROJECT_DIR$/frontend/js/grade.js" />
+        <option value="$PROJECT_DIR$/frontend/js/teacherhome.js" />
+        <option value="$PROJECT_DIR$/frontend/js/loadhome.js" />
+        <option value="$PROJECT_DIR$/frontend/js/loadassignment.js" />
+        <option value="$PROJECT_DIR$/frontend/templates/assignment.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/teacherhome.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/studenthome.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/index.html" />
+        <option value="$PROJECT_DIR$/frontend/templates/about.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="43" />
-    <option name="width" value="1920" />
-    <option name="height" value="1092" />
+    <option name="y" value="315" />
+    <option name="width" value="1910" />
+    <option name="height" value="1130" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -267,51 +272,27 @@
             <path>
               <item name="hello" type="b2602c69:ProjectViewProjectNode" />
               <item name="KTeach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="assignments" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hello" type="b2602c69:ProjectViewProjectNode" />
               <item name="KTeach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="assignments" type="462c0819:PsiDirectoryNode" />
-              <item name="perilous-palindromes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTeach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTeach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="hello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTeach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KTeach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="Grading" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588280242701" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588292190368" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/kotlin/Grading" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -324,11 +305,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assignments/dashing-dataclasses" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/Grading" />
       <recent name="$PROJECT_DIR$/assignments/perilous-palindromes" />
       <recent name="$PROJECT_DIR$/assignments" />
       <recent name="$PROJECT_DIR$/frontend/js" />
-      <recent name="$PROJECT_DIR$/frontend/templates" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/build/google" />
@@ -354,7 +335,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.Grading.File_testKt">
+  <component name="RunManager" selected="Gradle.KTeach [shadowJar]">
     <configuration name="KTeach [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -471,18 +452,19 @@
       <workItem from="1588087091193" duration="31259000" />
       <workItem from="1588187441179" duration="2699000" />
       <workItem from="1588204661950" duration="13237000" />
-      <workItem from="1588270477213" duration="9644000" />
+      <workItem from="1588270477213" duration="14329000" />
+      <workItem from="1588288016700" duration="3022000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127617000" />
+    <option name="totallyTimeSpent" value="135324000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="43" width="3200" height="1757" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17116249" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1734104" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -491,13 +473,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21666667" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.21666667" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.22666667" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.22666667" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.216" />
@@ -559,9 +541,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/css/landing-page.min.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/templates/index.ftl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -612,8 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file_test.kt" />
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file.kt" />
     <entry file="file://$PROJECT_DIR$/frontend/css/simple-sidebar.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -725,13 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/Auth.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="783">
@@ -749,27 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/loadassignment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/loadhome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="742">
-          <caret line="41" column="11" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="659">
@@ -777,80 +726,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2552">
-          <caret line="88" column="7" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/teacherhome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="117" column="67" selection-start-line="117" selection-start-column="67" selection-end-line="117" selection-end-column="67" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#body#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/grade.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-157">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/teacherhome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1381">
-          <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
-          <folding>
-            <element signature="n#style#0;n#a#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/modal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="89" lean-forward="true" selection-start-column="89" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/assignment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/studenthome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1073">
-          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4843">
-          <caret line="190" column="70" selection-start-line="190" selection-start-column="70" selection-end-line="190" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/dashing-dataclasses/file_test">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/dashing-dataclasses/file_test.kts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/dashing-dataclasses/file_test" />
+    <entry file="file://$PROJECT_DIR$/assignments/dashing-dataclasses/file_test.kts" />
     <entry file="file://$PROJECT_DIR$/assignments/perilous-palindromes/file.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -865,26 +742,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/TestUtil.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="377">
+          <caret line="13" column="69" selection-start-line="13" selection-start-column="69" selection-end-line="13" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Grading/file_test.kt">
+    <entry file="file://$PROJECT_DIR$/assignments/dashing-dataclasses/file_test.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/dashing-dataclasses/file.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1972">
+          <caret line="229" column="24" lean-forward="true" selection-start-line="229" selection-start-column="24" selection-end-line="229" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/js/modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/js/loadhome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/js/teacherhome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1566">
+          <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/js/auth.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/js/grade.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/assignment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
           <folding>
-            <element signature="e#17#70#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/js/loadassignment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="3" column="79" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/studenthome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/css/landing-page.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="526" selection-start-line="4" selection-start-column="526" selection-end-line="4" selection-end-column="526" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/teacherhome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1239">
+          <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="119" column="17" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="63" column="340" selection-start-line="63" selection-start-column="340" selection-end-line="63" selection-end-column="340" />
+          <folding>
+            <element signature="e#8306#8312#0" expanded="true" />
           </folding>
         </state>
       </provider>

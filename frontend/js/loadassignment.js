@@ -1,5 +1,7 @@
 let user_json = JSON.parse(localStorage.getItem('user'));
 document.getElementById("sidebar-title").innerText = "Classroom ".concat(user_json["classroom_id"]);
+document.getElementById('progress-bar-student').style.width = "25%";
+document.getElementById('username').innerText = "Hi, "+user_json["first_name"];
 function getUrlVars() {
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -24,4 +26,5 @@ fetch('http://localhost:8080/api/firestore/Assignments/'+assignment_id)
         button.setAttribute('href', problem);
         let testpath = document.getElementById("testpath");
         testpath.setAttribute('value', test);
+        document.getElementById('progress-bar-student').style.width = "100%";
     });

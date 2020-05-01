@@ -19,5 +19,6 @@ fetch('http://localhost:8080/api/assignments/'+user_json["id"])
                 '<a class="btn btn-primary" href='+ref+ ' id="username">View Assignment</a>'+
                 '<hr>';
             document.getElementById('assignments').innerHTML += result;
-        })
+        });
+        document.getElementById('progress-bar-student').style.width = "100%";
     });
