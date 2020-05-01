@@ -21,8 +21,7 @@ Viruses should also have a method called infect() that increases their number of
 
 // Declare your data class below
 // data class Virus()
-data class Virus(val name: String, var numberInfected : Int, var rate : Float) {
-    fun infect() {
-        numberInfected++;
-    }
+
+fun main() {
+    // Test your data class here
 }
