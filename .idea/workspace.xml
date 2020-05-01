@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5682e2d5-131e-4d5c-a7be-218048cf1ce9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/frontend/js/loadhome.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/loadhome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/teacherhome.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/teacherhome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/teacherhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/teacherhome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/assignment.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/assignment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt" afterDir="false" />
     </list>
@@ -56,11 +54,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="168" column="71" lean-forward="true" selection-start-line="168" selection-start-column="71" selection-end-line="168" selection-end-column="71" />
+            <state relative-caret-position="870">
+              <caret line="248" column="77" selection-start-line="248" selection-start-column="77" selection-end-line="248" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -68,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/js/loadhome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="22" column="11" lean-forward="true" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+            <state relative-caret-position="174">
+              <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -77,7 +75,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/templates/teacherhome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="743">
+            <state relative-caret-position="4408">
               <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -101,17 +99,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="312" column="40" selection-start-line="312" selection-start-column="40" selection-end-line="312" selection-end-column="40" />
+            <state relative-caret-position="150">
+              <caret line="89" column="79" lean-forward="true" selection-start-line="89" selection-start-column="79" selection-end-line="89" selection-end-column="79" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/templates/assignment.html">
+        <entry file="file://$PROJECT_DIR$/frontend/templates/studenthome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1479">
-              <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+            <state relative-caret-position="278">
+              <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -119,10 +117,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/js/modal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
+            <state relative-caret-position="812">
               <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
             </state>
           </provider>
@@ -138,10 +136,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/js/loadassignment.js">
+        <entry file="file://$PROJECT_DIR$/frontend/templates/assignment.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+            <state relative-caret-position="684">
+              <caret line="64" column="78" lean-forward="true" selection-start-line="64" selection-start-column="78" selection-end-line="64" selection-end-column="78" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -233,17 +234,17 @@
         <option value="$PROJECT_DIR$/frontend/js/auth.js" />
         <option value="$PROJECT_DIR$/frontend/js/grade.js" />
         <option value="$PROJECT_DIR$/frontend/js/loadassignment.js" />
-        <option value="$PROJECT_DIR$/frontend/templates/assignment.html" />
         <option value="$PROJECT_DIR$/frontend/templates/studenthome.html" />
         <option value="$PROJECT_DIR$/frontend/templates/index.html" />
         <option value="$PROJECT_DIR$/frontend/templates/about.html" />
         <option value="$PROJECT_DIR$/.gitattributes" />
-        <option value="$PROJECT_DIR$/frontend/js/loadhome.js" />
         <option value="$PROJECT_DIR$/frontend/js/teacherhome.js" />
         <option value="$PROJECT_DIR$/frontend/templates/teacherhome.html" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/Main.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt" />
         <option value="$PROJECT_DIR$/frontend/js/modal.js" />
+        <option value="$PROJECT_DIR$/frontend/js/loadhome.js" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt" />
+        <option value="$PROJECT_DIR$/frontend/templates/assignment.html" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Main.kt" />
       </list>
     </option>
   </component>
@@ -319,7 +320,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588294485901" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588296359933" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/kotlin/Grading" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -480,12 +481,12 @@
       <workItem from="1588187441179" duration="2699000" />
       <workItem from="1588204661950" duration="13237000" />
       <workItem from="1588270477213" duration="14329000" />
-      <workItem from="1588288016700" duration="5333000" />
+      <workItem from="1588288016700" duration="7016000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137635000" />
+    <option name="totallyTimeSpent" value="139318000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="43" width="3200" height="1757" extended-state="6" />
@@ -782,16 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/studenthome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/css/landing-page.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
@@ -823,16 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/assignment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/js/loadassignment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="559">
@@ -854,30 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="312" column="40" selection-start-line="312" selection-start-column="40" selection-end-line="312" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/templates/teacherhome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="168" column="71" lean-forward="true" selection-start-line="168" selection-start-column="71" selection-end-line="168" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/js/teacherhome.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="676">
@@ -888,17 +845,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/loadhome.js">
+    <entry file="file://$PROJECT_DIR$/frontend/js/modal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="22" column="11" lean-forward="true" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+        <state relative-caret-position="812">
+          <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/modal.js">
+    <entry file="file://$PROJECT_DIR$/frontend/templates/studenthome.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
+        <state relative-caret-position="278">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Services/GLibrary.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="89" column="79" lean-forward="true" selection-start-line="89" selection-start-column="79" selection-end-line="89" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/js/loadhome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/assignment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="64" column="78" lean-forward="true" selection-start-line="64" selection-start-column="78" selection-end-line="64" selection-end-column="78" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/templates/teacherhome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4408">
+          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="248" column="77" selection-start-line="248" selection-start-column="77" selection-end-line="248" selection-end-column="77" />
         </state>
       </provider>
     </entry>

@@ -87,6 +87,7 @@ fun getStudentTemplate(): MutableMap<String, Any>? {
 // Add student to the firestore
 fun addNewStudent(fname: String, lname: String, pwd: String, email: String, classroom_id: String): MutableMap<String, Any>? {
     val id = createID(email, pwd)
+    val exists = getDocumentFromDB("Students", id, Constants.db) ?: return null
     // Get the student template
     val temp_student = getStudentTemplate()
     // Set fields

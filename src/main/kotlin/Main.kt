@@ -212,6 +212,11 @@ fun Application.api() { // Extension function for Application called adder()
             try {
                 multipart.forEachPart { part ->
                     if (part is PartData.FileItem) {
+                        val ext = File(part.originalFileName).extension
+                        println(ext)
+                        if (ext != "kt") {
+                            throw IOException("File is not a kotlin file!")
+                        }
                         val name = "file_$studentID.kt"
                         val file = File(
                             path,
@@ -241,6 +246,9 @@ fun Application.api() { // Extension function for Application called adder()
             } catch (e: java.lang.Exception) {
                 println("something went wrong :/")
                 e.printStackTrace()
+                call.respond(
+                    Results(listOf("Not a valid file type!"), listOf(0.0, 0.0))
+                )
             }
         }
     }

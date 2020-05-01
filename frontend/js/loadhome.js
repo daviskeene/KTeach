@@ -4,6 +4,7 @@ if (user_json === null) {
     throw new Error("Incorrect login attempt!");
 }
 document.getElementById("username").innerText = "Hi, ".concat(user_json["first_name"]);
+document.getElementById('progress-bar-student').style.width = "50%";
 // Get assignments from currently logged in user
 fetch('http://localhost:8080/api/assignments/'+user_json["id"])
     .then((res) => {
