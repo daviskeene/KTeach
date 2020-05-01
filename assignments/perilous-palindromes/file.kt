@@ -11,5 +11,8 @@ fun palindrome(str: String?) : Boolean {
 
 }
 
-//    palindrome("racecar") // should return true
-//    palindrome("davis keene") // should return false
+fun main() {
+    // Test your code here
+    //    palindrome("racecar") // should return true
+    //    palindrome("davis keene") // should return false   
+}
