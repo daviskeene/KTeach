@@ -58,6 +58,7 @@ fun Application.api() { // Extension function for Application called adder()
 
     install(CORS) {
         anyHost()
+        allowCredentials
         header(HttpHeaders.AccessControlAllowOrigin)
         header("Content-Type")
         header(HttpHeaders.AccessControlAllowCredentials)
@@ -130,7 +131,7 @@ fun Application.api() { // Extension function for Application called adder()
                     "Invalid Input"
                 })
             }
-                call.respond(response!!);
+                call.respond(response!!)
             } catch (e: java.lang.Exception) {
                 e.printStackTrace()
             }
@@ -213,7 +214,7 @@ fun Application.api() { // Extension function for Application called adder()
                 multipart.forEachPart { part ->
                     if (part is PartData.FileItem) {
                         val ext = File(part.originalFileName).extension
-                        println(ext)
+                        // Verify upload is a kotlin file
                         if (ext != "kt") {
                             throw IOException("File is not a kotlin file!")
                         }
@@ -240,14 +241,24 @@ fun Application.api() { // Extension function for Application called adder()
                 "./compile.sh $studentID".runCommand()
                 val results = "./run.sh $studentID".runCommand()
                 val (cases, numbers) = splitGradingOutput(results!!)
-                // remove temp files
                 "./clean.sh $studentID".runCommand()
-                call.respond(Results(cases, numbers))
+                if (numbers.isEmpty()) {
+                    call.respond(
+                        Results(listOf("Invalid submission format! Please check the following:",
+                            "Do not change the package name of the problem file (the top should read 'package Grading').",
+                            "Dont throw any exceptions (unless its a part of the assignment).",
+                            "Don't change the name of any pre-declared functions, and be sure to spell things correctly!",
+                            "Double check your formatting, parenthesis / brackets, or anything else that would cause your code to fail."), listOf(0.0, 0.0))
+                    )
+                } else {
+                    call.respond(Results(cases, numbers))
+                }
+                // remove temp files
             } catch (e: java.lang.Exception) {
                 println("something went wrong :/")
                 e.printStackTrace()
                 call.respond(
-                    Results(listOf("Not a valid file type!"), listOf(0.0, 0.0))
+                    Results(listOf("Something went wrong! Either invalid file type no test file uploaded by teacher."), listOf(0.0, 0.0))
                 )
             }
         }

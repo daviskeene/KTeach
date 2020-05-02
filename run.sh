@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-kotlin test_$1.jar
+kotlin -cp test_$1.jar Grading.File_testKt

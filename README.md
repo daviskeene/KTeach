@@ -8,5 +8,6 @@ KTeach is a Kotlin based learning service to allow classrooms to push out coding
 
 KTeach is designed to be a simple web application running on a Kotlin powered web API. Using kTor, Google Cloud and other services, I plan on making an application with basic user authentication, an interface for both students and teachers, and a way for teachers to push out code and for sudents to submit it.
 
-For more information, the code is (going to be) well documented, and my overall design process will be recorded in the seperate DEVELOPMENT.md file.
+KTeach is now live! Check it out at http://kteach.live.
 
+If you want to join an example classroom to get started and try out some basic Kotlin assignments, the classroom code is MBYGJF. Feel free to try to complete some of the assignments!

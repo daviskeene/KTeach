@@ -29,7 +29,7 @@ $('#modal-form').on('submit', function (e) {
             "deadline" : $("#defaultForm-deadline").val()
         };
         $.ajax({
-            url : 'http://localhost:8080/api/firestore/update/Assignments/'+$("#defaultForm-id").val(),
+            url : 'http://167.99.53.134:8080/api/firestore/update/Assignments/'+$("#defaultForm-id").val(),
             type: "POST",
             data: JSON.stringify(data),
             contentType: "application/json",
@@ -51,7 +51,7 @@ $('#modal-form').on('submit', function (e) {
             "deadline" : $("#defaultForm-deadline").val(),
         };
         $.ajax({
-            url : 'http://localhost:8080/api/firestore/add/assignment/',
+            url : 'https://167.99.53.134:8080/api/firestore/add/assignment/',
             type: "POST",
             data: JSON.stringify(data),
             contentType: "application/json",
@@ -76,7 +76,7 @@ $('#modalConfirmation').on('show.bs.modal', function (event) {
 $('#confirmation-form').on('submit', function (e) {
     e.preventDefault();
     $.ajax({
-        url : 'http://localhost:8080/api/firestore/delete/Assignments/'+$("#confirmForm-assignment").val(),
+        url : 'http://167.99.53.134:8080/api/firestore/delete/Assignments/'+$("#confirmForm-assignment").val(),
         type: "POST",
         data: {
 

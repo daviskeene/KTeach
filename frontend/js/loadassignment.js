@@ -13,7 +13,7 @@ function getUrlVars() {
 let assignment_id = getUrlVars()["id"];
 console.log(assignment_id);
 
-fetch('http://localhost:8080/api/firestore/Assignments/'+assignment_id)
+fetch('http://167.99.53.134:8080/api/firestore/Assignments/'+assignment_id)
     .then((res) => {
         return res.json()
     })
