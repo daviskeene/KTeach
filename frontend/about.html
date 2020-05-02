@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About KTeach</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">KTeach: The Kotlin Classroom</a>
+        <a class="btn btn-primary" href="authentication.html" id="name">Sign Up or Sign In</a>
+        <script>
+            if (localStorage.getItem('user') !== null) {
+                let user_json = JSON.parse(localStorage.getItem('user'));
+                let button = document.getElementById("name");
+                button.innerText = "Hi, ".concat(user_json["first_name"]);
+                if (user_json["isTeacher"]) {
+                    button.setAttribute('href', 'teacherhome.html')
+                } else {
+                    button.setAttribute('href', 'studenthome.html')
+                }
+            }
+        </script>
+    </div>
+</nav>
+
+<div class="bg-light">
+    <div class="container py-5">
+        <div class="row h-100 align-items-center py-5">
+            <div class="col-lg-6">
+                <h1 class="display-4">About KTeach</h1>
+                <p class="lead text-muted mb-0">The Kotlin Classroom that's easy to understand.</p>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block"><img src="https://www.kindpng.com/picc/m/372-3725755_coding-isometric-illustration-hd-png-download.png" alt="" class="img-fluid"></div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white py-5">
+    <div class="container py-5">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
+                <h2 class="font-weight-light">Learn Kotlin Confidently</h2>
+                <p class="font-italic text-muted mb-4">KTeach was a Final Project idea for CS 199-KT, a Kotlin class at UIUC. It was built to give professors a platform to create their own custom Kotlin curriculums with ease.</p>
+            </div>
+            <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="https://cdn.dribbble.com/users/3837152/screenshots/6791636/2_2x.png" alt="" class="img-fluid mb-4 mb-lg-0"></div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-5 px-5 mx-auto"><img src="https://us.123rf.com/450wm/alfazetchronicles/alfazetchronicles1711/alfazetchronicles171100329/90756869-woman-working-at-computer-isometric-3d-icon-busy-business-people-in-office-company-professional-occu.jpg?ver=6" alt="" class="img-fluid mb-4 mb-lg-0"></div>
+            <div class="col-lg-6"><i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
+                <h2 class="font-weight-light">Simplicity is Everything</h2>
+                <p class="font-italic text-muted mb-4">Kotlin is a challenging language to learn, especially if you're not used to topics such as null safety or concurrent programming. The UI was designed to be inuitive, such that professors just have to worry about creating problems and students just have to focus on learning Kotlin.</p><a href="authentication.html" class="btn btn-light px-5 rounded-pill shadow-sm">Get Started</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-light py-5">
+    <div class="container py-5">
+        <div class="row mb-4">
+            <div class="col-lg-7">
+                <h2 class="display-4 font-weight-light mx-0">About Me</h2>
+                <p class="font-italic text-muted">My name is Davis Keene, and I'm a statistics and computer science major at UIUC. I enjoy rock climbing, playing tennis, and <a href="https://www.youtube.com/watch?v=b1_8jTFulLg">yoyoing!</a> Above all else, I'm an avid software developer that wants to make a lasting positive impact, and I hope that with KTeach I'll be able to accomplish that.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="bg-light pb-5">
+    <div class="container text-center">
+        <p class="font-italic text-muted mb-0">&copy; Copyright KTeach All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
