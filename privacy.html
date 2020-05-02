@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KTeach Privacy Policy</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">KTeach: The Kotlin Classroom</a>
+        <a class="btn btn-primary" href="authentication.html" id="name">Sign Up or Sign In</a>
+        <script>
+            if (localStorage.getItem('user') !== null) {
+                let user_json = JSON.parse(localStorage.getItem('user'));
+                let button = document.getElementById("name");
+                button.innerText = "Hi, ".concat(user_json["first_name"]);
+                if (user_json["isTeacher"]) {
+                    button.setAttribute('href', 'teacherhome.html')
+                } else {
+                    button.setAttribute('href', 'studenthome.html')
+                }
+            }
+        </script>
+    </div>
+</nav>
+
+<div class="bg-white">
+    <div class="container py-5">
+        <div class="row h-100 align-items-center py-5">
+            <div class="col-lg-6">
+                <h1 class="display-4">Privacy Policy</h1>
+                <p class="lead text-muted mb-0">How KTeach keeps your private information safe.</p>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block"><img src="https://www.tenforums.com/geek/gars/images/2/types/thumb_EFS_lock.png" alt="" class="img-fluid"></div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-light py-5">
+    <div class="container py-5">
+        <div class="row mb-4">
+            <div class="col-lg-7">
+                <h2 class="display-4 font-weight-light mx-0">How Your Data is Stored</h2>
+                <p class="font-weight-light text-break">
+                    The only information stored on our database is your Name, Email, Classroom Code, Complete Assignments and Unique ID. This ID is an <a href="">MD5</a> hash of your e-mail address and password. We cannot
+                    see your password, but we have access to your email to contact you and to the hash for authentication. When you sign in, we verify that a user with a matching hash (ID) exists in the database. If
+                    they do, then we sign you in. If not, then we'll let you know that some information was entered incorrectly.
+                 </p>
+
+                <p class="font-weight-light">To view all data stored on our end, take a look at your browser's localStorage after a successful login attempt. This is how we load page content, by essentially storing a local copy of your information on the
+                client's side and loading from local storage. Other dynamic content is loaded from calls to our API with your ID and classroom code.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="bg-light pb-5">
+    <div class="container text-center">
+        <p class="font-italic text-muted mb-0">&copy; Copyright KTeach All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
