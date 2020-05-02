@@ -25,6 +25,7 @@ dependencies {
     val ktorVersion = "1.3.0"
     implementation("io.ktor:ktor-server-core:$ktorVersion")
     implementation("io.ktor:ktor-server-netty:$ktorVersion")
+    implementation("io.ktor:ktor-network-tls:$ktorVersion")
     implementation("io.ktor:ktor-gson:$ktorVersion")
     implementation("io.ktor:ktor-freemarker:$ktorVersion")
 

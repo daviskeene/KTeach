@@ -58,6 +58,7 @@ fun Application.api() { // Extension function for Application called adder()
 
     install(CORS) {
         anyHost()
+        allowCredentials
         header(HttpHeaders.AccessControlAllowOrigin)
         header("Content-Type")
         header(HttpHeaders.AccessControlAllowCredentials)
@@ -130,7 +131,7 @@ fun Application.api() { // Extension function for Application called adder()
                     "Invalid Input"
                 })
             }
-                call.respond(response!!);
+                call.respond(response!!)
             } catch (e: java.lang.Exception) {
                 e.printStackTrace()
             }

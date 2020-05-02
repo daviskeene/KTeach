@@ -2,4 +2,5 @@
 build/
 /.kotlintest
 out/
-frontend/vendor/
+frontend/
+
