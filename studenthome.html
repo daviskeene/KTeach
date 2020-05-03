@@ -22,9 +22,13 @@
 <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">KTeach: The Kotlin Classroom</a>
+        <div>
         <a class="btn btn-primary" href="studenthome.html" id="username"></a>
+        <a class="btn btn-warning mx-2" href="index.html" id="logout" onclick="localStorage.removeItem('user')">Logout</a>
+        </div>
     </div>
 </nav>
+
 <div class="progress">
     <div class="progress-bar" id="progress-bar-student" role="progressbar" style="width: 0%" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
@@ -38,7 +42,6 @@
 
 <footer id="sticky-footer" class="footer">
     <div class="container text-center">
-        <a class="btn btn-warning" href="index.html" id="logout" onclick="localStorage.removeItem('user')">Logout</a>
         <br>
         <small>Copyright &copy; KTeach 2020</small>
     </div>

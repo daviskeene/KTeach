@@ -17,7 +17,7 @@ fetch('http://167.99.53.134:8080/api/firestore/Assignments/'+assignment_id)
     .then((res) => {
         return res.json()
     })
-    .then((data) => {
+    .then(async (data) => {
         const {title, description, problem, test, id} = data;
         console.log(data);
         document.getElementById("name").innerText = title;
@@ -27,4 +27,19 @@ fetch('http://167.99.53.134:8080/api/firestore/Assignments/'+assignment_id)
         let testpath = document.getElementById("testpath");
         testpath.setAttribute('value', test);
         document.getElementById('progress-bar-student').style.width = "100%";
+
+        // Load problem into editor
+        let problemText = await fetch(problem);
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/chrome");
+        editor.getSession().setMode("ace/mode/kotlin");
+        editor.getSession().setValue(await problemText.text());
     });
+
+// fetch(document.getElementById('download').getAttribute('href'))
+//     .then((res) => {
+//         return res.text();
+//     }).then((data) => {
+//     let editor = document.getElementById('editor');
+//     editor.innerText = data;
+// });

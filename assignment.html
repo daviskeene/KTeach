@@ -19,6 +19,16 @@
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
+    <style>
+        #editor {
+            position: absolute;
+            top: 0;
+            left : 0;
+            bottom: 0;
+            right: 25%;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -26,7 +36,10 @@
 <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">KTeach: The Kotlin Classroom</a>
-        <a class="btn btn-primary" href="studenthome.html" id="username"></a>
+        <div>
+            <a class="btn btn-primary" href="studenthome.html" id="username"></a>
+            <a class="btn btn-warning mx-2" href="index.html" id="logout" onclick="localStorage.removeItem('user')">Logout</a>
+        </div>
     </div>
 </nav>
 <div class="progress">
@@ -49,8 +62,13 @@
     <div id="page-content-wrapper">
 
         <div class="container-fluid">
+
             <h1 class="mt-3" id="name"></h1>
             <p id="description"></p>
+
+            <div class="border-right" style="position: relative; height: 300px;">
+                <div id="editor"></div>
+            </div>
 
         <a id="download" role="button" download>
             <button class="btn btn-outline-primary" style="vertical-align: middle">Download Assignment</button>
@@ -72,15 +90,15 @@
                     <h3>Autograder results will display here.</h3>
                 </div>
         </div>
-
     </div>
     <!-- /#page-content-wrapper -->
-
 </div>
 
 <div id ="content"></div>
     <script src="js/loadassignment.js"></script>
     <script src="js/grade.js"></script>
+
+    <script src="./ace-builds/src-noconflict/ace.js" type="text/javascript"></script>
 </div>
 
 </body>
