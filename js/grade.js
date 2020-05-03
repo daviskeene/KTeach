@@ -2,7 +2,7 @@ document.querySelector('#upload').addEventListener('click', event => {
     handleFileUpload(true);
 });
 
-document.querySelector("#download").addEventListener('click', event => {
+document.querySelector("#upload-main").addEventListener('click', event => {
     handleFileUpload(false);
 });
 
@@ -30,7 +30,7 @@ function handleFileUpload(isGrading) {
     // Start spinner
     document.getElementById('upload-spinner').style.opacity = "100";
 
-    fetch('http://localhost:8080/api/upload/' + student_id, {
+    fetch('http://167.99.53.134:8080/api/upload/' + student_id, {
         method: 'POST',
         body: formData
     })
