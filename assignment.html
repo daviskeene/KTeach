@@ -25,7 +25,23 @@
             top: 0;
             left : 0;
             bottom: 0;
-            right: 25%;
+            right: 0;
+        }
+        #container-code {
+            background-color: #000000;
+            width: 100%;
+            height: 100%;
+            max-width: 800px;
+            max-height: 250px;
+            padding: 3em;
+            border-radius: 15px;
+            overflow: scroll;
+        }
+
+        #autograder {
+            color: #ffffff;
+            font-size: 16px;
+            font-family: monospace;
         }
     </style>
 
@@ -70,8 +86,8 @@
                 <div id="editor"></div>
             </div>
 
-        <a id="download" role="button" download>
-            <button class="btn btn-outline-primary" style="vertical-align: middle">Download Assignment</button>
+        <a id="download" role="button">
+            <button class="btn btn-outline-primary" style="vertical-align: middle">Run Main</button>
         </a>
         <label id="upload" class="btn btn-outline-success my-0" style="vertical-align: middle">
             Check Solution
@@ -82,11 +98,12 @@
             </div>
             <input type="hidden" id="testpath" value="">
 
-            <br><br><br>
             <div id="results">
                 <h2 id="score"></h2>
+                <div id="container-code">
                 <div id="autograder">
-                    <h3>Autograder results will display here.</h3>
+                    <h3>Output will be displayed here.</h3>
+                </div>
                 </div>
         </div>
     </div>
@@ -96,7 +113,6 @@
 <div id ="content"></div>
     <script src="js/loadassignment.js"></script>
     <script src="js/grade.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript"></script>
 </div>
 
