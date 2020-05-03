@@ -218,7 +218,7 @@ fun Application.api() { // Extension function for Application called adder()
                         if (ext != "kt") {
                             throw IOException("File is not a kotlin file!")
                         }
-                        val name = "file_$studentID.kt"
+                        val name = "file.kt"
                         val file = File(
                             path,
                             name
@@ -231,18 +231,22 @@ fun Application.api() { // Extension function for Application called adder()
                         }
                     }
                 }
+                var classPath : String? = null
+
                 // Check to see if we uploaded a test file, or if we need to download one
                 if (testDirectory == null) {
-                    throw IOException("Test file not found in request!")
+                    classPath = "Grading.FileKt"
                 } else {
                     downloadFile(testDirectory!!, path)
+                    classPath = "Grading.File_testKt"
                 }
                 // Need to call compilation outside of server, use bash scripts to do so
+
                 "./compile.sh $studentID".runCommand()
-                val results = "./run.sh $studentID".runCommand()
+                val results = "./run.sh $studentID $classPath".runCommand()
                 val (cases, numbers) = splitGradingOutput(results!!)
                 "./clean.sh $studentID".runCommand()
-                if (numbers.isEmpty()) {
+                if (numbers.isEmpty() && classPath == "Grading.File_testKt") {
                     call.respond(
                         Results(listOf("Invalid submission format! Please check the following:",
                             "Do not change the package name of the problem file (the top should read 'package Grading').",

@@ -1,5 +1,3 @@
-package Grading
-
 /*
 Data Classes are important data structures in Kotlin. They are powerful tools that allow us to encapsulate data.
 Data Classes are similar to Java Classes, although they construct everything that we need for us!

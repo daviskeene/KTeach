@@ -1,5 +1,3 @@
-package Grading
-
 /*
 Your task is to create a method that returns whether or not a string is a palindrome.
 The palindromes are NOT case sensitive.
