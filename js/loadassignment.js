@@ -34,12 +34,5 @@ fetch('http://167.99.53.134:8080/api/firestore/Assignments/'+assignment_id)
         editor.setTheme("ace/theme/chrome");
         editor.getSession().setMode("ace/mode/kotlin");
         editor.getSession().setValue(await problemText.text());
+        editor.setOption("maxlines", 25);
     });
-
-// fetch(document.getElementById('download').getAttribute('href'))
-//     .then((res) => {
-//         return res.text();
-//     }).then((data) => {
-//     let editor = document.getElementById('editor');
-//     editor.innerText = data;
-// });

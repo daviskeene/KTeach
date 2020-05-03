@@ -1,8 +1,8 @@
-document.querySelector('#upload').addEventListener('change', event => {
-    handleImageUpload(event);
+document.querySelector('#upload').addEventListener('click', event => {
+    handleFileUpload(event);
 });
 
-const handleImageUpload = event => {
+const handleFileUpload = event => {
     let user_json = JSON.parse(localStorage.getItem('user'));
     let student_id = user_json["id"];
     let testpath = document.getElementById("testpath").getAttribute("value");
@@ -10,9 +10,11 @@ const handleImageUpload = event => {
     document.getElementById('score').innerText = "";
     document.getElementById('autograder').innerHTML = "";
 
-    const files = event.target.files;
+    var editor = ace.edit("editor");
+    var file = new File([editor.getValue()], "file.kt");
+
     const formData = new FormData();
-    formData.append('file', files[0]);
+    formData.append('file', file);
     formData.append('test', testpath);
     console.log(student_id);
     console.log(formData.get('file'));
