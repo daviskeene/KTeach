@@ -22,7 +22,19 @@ fun availableAssignments(student_id: String): MutableList<MutableMap<String, Any
         val assignments = classroom_ref?.get("assignments") as List<String>
         for (assignment in assignments) {
             if (!completed_assignments.contains(assignment)) {
-                result.add(getAssignment(assignment))
+                val assignmentToAdd = getAssignment(assignment)
+                try {
+                    assignmentToAdd?.set(
+                        "score", getScoreOnAssignment(
+                            student_ref.get("classroom_id") as String,
+                            student_id,
+                            assignmentToAdd.get("id") as String
+                        )
+                    )
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+                result.add(assignmentToAdd)
             }
         }
         return result

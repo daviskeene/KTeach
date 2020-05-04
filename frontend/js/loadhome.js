@@ -11,16 +11,21 @@ fetch('http://167.99.53.134:8080/api/assignments/'+user_json["id"])
         return res.json()
     })
     .then((data) => {
+        let courseGrade = [0, 0];
         data.forEach((assignment) =>  {
-            const {title, description, problem, test, id, deadline} = assignment;
+            const {title, description, problem, test, id, deadline, score} = assignment;
+            courseGrade[0] += score[0];
+            courseGrade[1] += score[1];
             let ref = "assignment.html?id=".concat(id);
             let result =
                 '<h1>' + title + '</h1>'+
                 '<p>' + description + '</p>' +
+                '<p class="my-2">Score: '+Number((score[0] / score[1])*100).toFixed(2)+'</p>'+
+                '<p class="text-muted">Deadline: '+deadline+'</p>'+
                 '<a class="btn btn-primary" href='+ref+ ' id="username">View Assignment</a>'+
-                '<p class="text-muted my-2">Deadline: '+deadline+'</p>'+
                 '<hr>';
             document.getElementById('assignments').innerHTML += result;
         });
         document.getElementById('progress-bar-student').style.width = "100%";
+        document.getElementById('course-grade').innerText += 'Homework Average: ' + Number((courseGrade[0] / courseGrade[1])*100).toFixed(2);
     });

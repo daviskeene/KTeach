@@ -78,7 +78,7 @@
     <div id="page-content-wrapper">
 
         <div class="container-fluid">
-
+            <label style="display: none" id="assignment-id"></label>
             <h1 class="mt-3" id="name"></h1>
             <p id="description"></p>
 
@@ -86,23 +86,25 @@
                 <div id="editor"></div>
             </div>
 
-        <a id="download" role="button">
+        <a id="download" role="button" download>
+            <button class="btn btn-outline-secondary" style="vertical-align: middle">Download Assignment</button>
+        </a>
+        <a id="upload-main" role="button">
             <button class="btn btn-outline-primary" style="vertical-align: middle">Run Main</button>
         </a>
-        <label id="upload" class="btn btn-outline-success my-0" style="vertical-align: middle">
-            Check Solution
-        </label>
+        <a id="upload" role="button" download>
+            <button class="btn btn-outline-success" style="vertical-align: middle">Check Solution</button>
+        </a>
 
             <div class="spinner-border text-primary" id="upload-spinner" role="status" style="opacity: 0">
                 <span class="sr-only">Loading...</span>
             </div>
             <input type="hidden" id="testpath" value="">
-
-            <div id="results">
+            <div id="results" class="my-3">
                 <h2 id="score"></h2>
                 <div id="container-code">
                 <div id="autograder">
-                    <h3>Output will be displayed here.</h3>
+                    <p style="font-family: monospace, monospace;">Output will be displayed here.</p>
                 </div>
                 </div>
         </div>

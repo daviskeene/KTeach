@@ -51,6 +51,9 @@ data class IndexData(val items: List<Int>)
 
 data class LoginRequest(val email: String, val password: String)
 
+data class UpdateGradebookRequest(val classroom_id: String, val student_id : String, val assignment_id : String,
+                                  val pointsScored : Double, val pointsTotal : Double)
+
 fun Application.api() { // Extension function for Application called adder()
     install(ContentNegotiation) {
         gson { }
@@ -94,13 +97,13 @@ fun Application.api() { // Extension function for Application called adder()
             }
         }
 
-        get("api/assignments/{id}") {
+        get("/api/assignments/{id}") {
             val student_id = call.parameters["id"]!!
             val assignments = availableAssignments(student_id)
             call.respond(assignments)
         }
 
-        get("api/firestore/test") {
+        get("/api/firestore/test") {
             getDB()
         }
 
@@ -151,7 +154,7 @@ fun Application.api() { // Extension function for Application called adder()
         }
 
         // Update firestore documents
-        post("api/firestore/update/{col}/{doc}") {
+        post("/api/firestore/update/{col}/{doc}") {
             val doctype = call.parameters["col"]!!
             val id = call.parameters["doc"]!!
             try {
@@ -186,7 +189,7 @@ fun Application.api() { // Extension function for Application called adder()
         }
 
         // Delete documents
-        post("api/firestore/delete/{col}/{doc}") {
+        post("/api/firestore/delete/{col}/{doc}") {
             val doctype = call.parameters["col"]!!
             val id = call.parameters["doc"]!!
             try {
@@ -198,6 +201,24 @@ fun Application.api() { // Extension function for Application called adder()
             }
             call.respond(HttpStatusCode.OK,
             "Document successfully deleted")
+        }
+
+        post("/api/firestore/update/gradebook") {
+            try {
+                val request = call.receive<UpdateGradebookRequest>()
+                updateGradebook(request.classroom_id, request.student_id, request.assignment_id,
+                    request.pointsScored, request.pointsTotal)
+                call.respond({
+                    HttpStatusCode.OK
+                    "Update successful!"
+                })
+            } catch (e: java.lang.Exception) {
+                e.printStackTrace()
+                call.respond({
+                    HttpStatusCode.BadRequest
+                    "Something went wrong."
+                })
+            }
         }
 
         // Upload user solutions
@@ -252,7 +273,7 @@ fun Application.api() { // Extension function for Application called adder()
                             "Do not change the package name of the problem file (the top should read 'package Grading').",
                             "Dont throw any exceptions (unless its a part of the assignment).",
                             "Don't change the name of any pre-declared functions, and be sure to spell things correctly!",
-                            "Double check your formatting, parenthesis / brackets, or anything else that would cause your code to fail."), listOf(0.0, 0.0))
+                            "Double check your formatting, parenthesis / brackets, or anything else that would cause your code to fail."), listOf(0.0, 1.0))
                     )
                 } else {
                     call.respond(Results(cases, numbers))
@@ -262,7 +283,7 @@ fun Application.api() { // Extension function for Application called adder()
                 println("something went wrong :/")
                 e.printStackTrace()
                 call.respond(
-                    Results(listOf("Something went wrong! Either invalid file type no test file uploaded by teacher."), listOf(0.0, 0.0))
+                    Results(listOf("Something went wrong! Either invalid file type no test file uploaded by teacher."), listOf(0.0, 1.0))
                 )
             }
         }

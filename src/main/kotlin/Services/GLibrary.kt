@@ -9,6 +9,7 @@ import org.joda.time.DateTime
 import org.joda.time.LocalDate
 import org.joda.time.LocalDateTime
 import java.lang.Exception
+import java.lang.NullPointerException
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.streams.asSequence
@@ -324,4 +325,42 @@ fun getAssignment(id: String): MutableMap<String, Any>? {
         id,
         Constants.db
     )
+}
+
+fun getScoreOnAssignment(classroomID: String, studentID: String, assignmentID: String) : List<Double> {
+    try {
+        val classroom = getClassroom(classroomID)
+        val gradebook = classroom?.get("gradebook") as MutableMap<String, Any>?
+        val studentRecord = gradebook?.get(studentID) as MutableMap<String, Any>?
+        val assignmentResults = studentRecord?.get(assignmentID) as List<Double>
+        return assignmentResults
+    } catch (e: Exception) {
+        return listOf(0.0, 1.0) // Placeholders
+    }
+}
+
+fun updateGradebook(classroomID : String, studentID : String, assignmentID: String, pointsScored: Double, pointsTotal:Double) {
+    val classroom_ref = Constants.db.collection(Constants.classrooms_col).document(classroomID)
+    var classroom = getClassroom(classroomID)
+    var gradebook = classroom?.get("gradebook") as MutableMap<String, Any>? // Map of students
+    // Check to see if assignment record exists
+    if (gradebook?.get(studentID) == null) {
+        // If an assignment doesn't already exist, create one.
+        gradebook?.set(studentID, mutableMapOf<String, Any>())
+    }
+    val studentRecords = gradebook?.get(studentID) as MutableMap<String, Any>? // Map of assignments
+
+    if (studentRecords?.get(assignmentID) == null) {
+        studentRecords?.set(assignmentID, mutableListOf(0.0, 10.0)) // Placeholders
+    }
+    // Update assignment record
+    var assignmentRecords = studentRecords?.get(assignmentID) as MutableList<Double> // List of doubles
+    // Only update scores if the points scored is greater than or equal to the best attempt
+    if (pointsScored >= assignmentRecords.get(0)) {
+        assignmentRecords.set(0, pointsScored)
+        assignmentRecords.set(1, pointsTotal)
+    } else if (assignmentRecords.get(1) < pointsTotal) {
+        assignmentRecords.set(1, pointsTotal)
+    }
+    classroom_ref.set(classroom!!)
 }
