@@ -35,16 +35,32 @@ function handleFileUpload(isGrading) {
         body: formData
     })
         .then(response => response.json())
-        .then(data => {
+        .then(async data => {
             document.getElementById('upload-spinner').style.opacity = "0";
-            if (isGrading) {
-                document.getElementById('score').innerText += 'Score: ' + data.grade[0] + ' / ' + data.grade[1];
-            }
             data.cases.forEach((output) => {
                 let result =
-                    '<h4>'+output+'</h4>';
+                    '<p style="font-family: monospace">' + output + '</p>';
                 document.getElementById('autograder').innerHTML += result;
             });
+            if (isGrading) {
+                document.getElementById('score').innerText += 'Score: ' + data.grade[0] + ' / ' + data.grade[1];
+                // Update Gradebook
+                await fetch("http://167.99.53.134:8080/api/firestore/update/gradebook", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type' : 'application/json'
+                    },
+                    body: JSON.stringify({
+                        "classroom_id": user_json["classroom_id"],
+                        "student_id": user_json["id"],
+                        "assignment_id": document.getElementById('assignment-id').innerText,
+                        "pointsScored": data.grade[0],
+                        "pointsTotal": data.grade[1]
+                    })
+                }).then((response) => {
+                    console.log(response.text());
+                })
+            }
         })
 }
 

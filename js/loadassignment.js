@@ -27,6 +27,7 @@ fetch('http://167.99.53.134:8080/api/firestore/Assignments/'+assignment_id)
         let testpath = document.getElementById("testpath");
         testpath.setAttribute('value', test);
         document.getElementById('progress-bar-student').style.width = "100%";
+        document.getElementById('assignment-id').innerText = id;
 
         // Load problem into editor
         let problemText = await fetch(problem);
