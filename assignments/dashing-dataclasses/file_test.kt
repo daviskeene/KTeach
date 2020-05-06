@@ -2,6 +2,8 @@ package Grading
 
 import java.lang.Exception
 
+import main.Virus as Virus
+
 val cases = listOf(
     Case("Data class has (name) attribute", 1.0) {
         doesMethodExist("getName", "java.lang.String")

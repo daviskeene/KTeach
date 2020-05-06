@@ -1,5 +1,7 @@
 package Grading
 
+import main.palindrome as palindrome
+
 val cases = listOf(
     Case("racecar", 1.0) {
         val racecar: String = "racecar"
