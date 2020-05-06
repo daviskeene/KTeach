@@ -263,16 +263,18 @@ fun Application.api() { // Extension function for Application called adder()
                 }
                 // Need to call compilation outside of server, use bash scripts to do so
 
-                "./compile.sh $studentID".runCommand()
+                val compiled = "./compile.sh $studentID".runCommand()
+                //println(compiled)
                 val results = "./run.sh $studentID $classPath".runCommand()
-                val (cases, numbers) = splitGradingOutput(results!!)
+                val (cases, numbers) = splitGradingOutput(results!!, classPath == "Grading.File_testKt")
+                //println(results)
                 "./clean.sh $studentID".runCommand()
                 if (numbers.isEmpty() && classPath == "Grading.File_testKt") {
                     call.respond(
                         Results(listOf("Invalid submission format! Please check the following:",
-                            "Do not change the package name of the problem file (the top should read 'package Grading').",
                             "Dont throw any exceptions (unless its a part of the assignment).",
                             "Don't change the name of any pre-declared functions, and be sure to spell things correctly!",
+                            "Often, putting your code into an IDE will reveal any errors you can't catch with the naked eye.",
                             "Double check your formatting, parenthesis / brackets, or anything else that would cause your code to fail."), listOf(0.0, 1.0))
                     )
                 } else {
@@ -310,14 +312,18 @@ fun String.runCommand(): String? {
     }
 }
 
-fun splitGradingOutput(output: String): Pair<List<String>, List<Double>> {
+fun splitGradingOutput(output: String, isGrading: Boolean): Pair<List<String>, List<Double>> {
     // Grading numbers are only used in the last two test cases.
-    val items = output.split("\n")
-    var numbers = items
-        .filter { it.toDoubleOrNull() != null }
-        .map { it.toDouble() }
-    var cases = items.filter { it.toDoubleOrNull() == null }
-    return Pair(cases, numbers)
+    if (isGrading) {
+        val items = output.split("\n")
+        var numbers = items
+            .filter { it.toDoubleOrNull() != null }
+            .map { it.toDouble() }
+        var cases = items.filter { it.toDoubleOrNull() == null }
+        return Pair(cases, numbers)
+    } else {
+        return Pair(output.split("\n"), listOf(0.0, 1.0))
+    }
 }
 
 fun downloadFile(url: String, path: String) : String? {

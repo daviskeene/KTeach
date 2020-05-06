@@ -1,5 +1,8 @@
 package Services
 
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
 fun computeGrade(possible: Double, total: Double): Double {
     return possible / total
 }
@@ -23,18 +26,24 @@ fun availableAssignments(student_id: String): MutableList<MutableMap<String, Any
         for (assignment in assignments) {
             if (!completed_assignments.contains(assignment)) {
                 val assignmentToAdd = getAssignment(assignment)
-                try {
-                    assignmentToAdd?.set(
-                        "score", getScoreOnAssignment(
-                            student_ref.get("classroom_id") as String,
-                            student_id,
-                            assignmentToAdd.get("id") as String
+                // Check the due date
+                val current = LocalDate.now()
+                val assignmentDate = LocalDate.parse(assignmentToAdd!!["deadline"] as String, DateTimeFormatter.ISO_DATE)
+
+                if (current.isBefore(assignmentDate) || current.isEqual(assignmentDate)) {
+                    try {
+                        assignmentToAdd?.set(
+                            "score", getScoreOnAssignment(
+                                student_ref.get("classroom_id") as String,
+                                student_id,
+                                assignmentToAdd.get("id") as String
+                            )
                         )
-                    )
-                } catch (e: Exception) {
-                    e.printStackTrace()
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+                    result.add(assignmentToAdd)
                 }
-                result.add(assignmentToAdd)
             }
         }
         return result
