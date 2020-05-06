@@ -20,7 +20,7 @@ fun end() {
 }
 
 val cases = listOf(
-    Case("Output says 'Hello World!'", 1.0) {
+    Case("Output says 'Hello, world!'", 1.0) {
         setup() // Set output stream to hold output
         main1() // print hello world
         end() // Re-set output stream to original

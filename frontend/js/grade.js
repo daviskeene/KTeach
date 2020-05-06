@@ -16,7 +16,13 @@ function handleFileUpload(isGrading) {
 
     var editor = ace.edit("editor");
     // Add the grading package and then send to server
-    var file = new File(["package main\n"+editor.getValue()], "file.kt");
+    let packageStr = "package main\n";
+    // If we are not grading, use package Grading instead.
+    if (!isGrading) {
+        packageStr = "package Grading\n"
+    }
+
+    var file = new File([packageStr+editor.getValue()], "file.kt");
 
     const formData = new FormData();
     formData.append('file', file);

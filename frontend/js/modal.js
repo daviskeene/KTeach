@@ -51,7 +51,7 @@ $('#modal-form').on('submit', function (e) {
             "deadline" : $("#defaultForm-deadline").val(),
         };
         $.ajax({
-            url : 'https://167.99.53.134:8080/api/firestore/add/assignment/',
+            url : 'http://167.99.53.134:8080/api/firestore/add/assignment/',
             type: "POST",
             data: JSON.stringify(data),
             contentType: "application/json",
