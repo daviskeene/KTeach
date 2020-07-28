@@ -6,12 +6,13 @@ import io.ktor.application.call
 import io.ktor.application.install
 import io.ktor.features.CORS
 import io.ktor.features.ContentNegotiation
-import io.ktor.gson.gson
+//import io.ktor.gson.gson
 import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpStatusCode
 import io.ktor.http.content.PartData
 import io.ktor.http.content.forEachPart
 import io.ktor.http.content.streamProvider
+import io.ktor.jackson.jackson
 import io.ktor.request.receive
 import io.ktor.request.receiveMultipart
 import io.ktor.response.respond
@@ -56,7 +57,9 @@ data class UpdateGradebookRequest(val classroom_id: String, val student_id : Str
 
 fun Application.api() { // Extension function for Application called adder()
     install(ContentNegotiation) {
-        gson { }
+        jackson {
+            // Configure Jackson's ObjectMapper here
+        }
     }
 
     install(CORS) {
@@ -264,10 +267,10 @@ fun Application.api() { // Extension function for Application called adder()
                 // Need to call compilation outside of server, use bash scripts to do so
 
                 val compiled = "./compile.sh $studentID".runCommand()
-                //println(compiled)
+                println(compiled)
                 val results = "./run.sh $studentID $classPath".runCommand()
                 val (cases, numbers) = splitGradingOutput(results!!, classPath == "Grading.File_testKt")
-                //println(results)
+                println(results)
                 "./clean.sh $studentID".runCommand()
                 if (numbers.isEmpty() && classPath == "Grading.File_testKt") {
                     call.respond(
