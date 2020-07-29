@@ -1,17 +1,20 @@
 package hello
 
 import Services.*
+import com.fasterxml.jackson.databind.SerializationFeature
+import hello.Services.jeedTest
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
 import io.ktor.features.CORS
 import io.ktor.features.ContentNegotiation
-import io.ktor.gson.gson
+//import io.ktor.gson.gson
 import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpStatusCode
 import io.ktor.http.content.PartData
 import io.ktor.http.content.forEachPart
 import io.ktor.http.content.streamProvider
+import io.ktor.jackson.jackson
 import io.ktor.request.receive
 import io.ktor.request.receiveMultipart
 import io.ktor.response.respond
@@ -54,9 +57,22 @@ data class LoginRequest(val email: String, val password: String)
 data class UpdateGradebookRequest(val classroom_id: String, val student_id : String, val assignment_id : String,
                                   val pointsScored : Double, val pointsTotal : Double)
 
+data class GradeJob(
+    val submit: String,
+    val testName: String
+)
+
+data class Request (
+    val id : String,
+    val quantity: Int,
+    val isTrue: Boolean
+)
+
 fun Application.api() { // Extension function for Application called adder()
     install(ContentNegotiation) {
-        gson { }
+        jackson {
+            enable(SerializationFeature.INDENT_OUTPUT)
+        }
     }
 
     install(CORS) {
@@ -74,6 +90,12 @@ fun Application.api() { // Extension function for Application called adder()
         // Test
         get("/") {
             call.respondText(hello())
+        }
+
+        // To test if post end point is working
+        post("/"){
+            val request = call.receive<Request>()
+            call.respond(request)
         }
 
         // Retrieves data from a firestore document
@@ -264,10 +286,10 @@ fun Application.api() { // Extension function for Application called adder()
                 // Need to call compilation outside of server, use bash scripts to do so
 
                 val compiled = "./compile.sh $studentID".runCommand()
-                //println(compiled)
+                println(compiled)
                 val results = "./run.sh $studentID $classPath".runCommand()
                 val (cases, numbers) = splitGradingOutput(results!!, classPath == "Grading.File_testKt")
-                //println(results)
+                println(results)
                 "./clean.sh $studentID".runCommand()
                 if (numbers.isEmpty() && classPath == "Grading.File_testKt") {
                     call.respond(
@@ -288,6 +310,17 @@ fun Application.api() { // Extension function for Application called adder()
                     Results(listOf("Something went wrong! Either invalid file type no test file uploaded by teacher."), listOf(0.0, 1.0))
                 )
             }
+        }
+
+        // Jeed test user solutions
+        post("/api/jtest/{student_id}}") {
+            val studentID: String = call.parameters["student_id"] ?: "INVALID"
+            val toGrade = call.receive<GradeJob>();
+            println(toGrade.submit)
+            println("still working")
+            val resultLines = jeedTest(toGrade.submit, toGrade.testName)
+            println("jeed test ran for $studentID")
+            call.respond(resultLines)
         }
     }
 }
