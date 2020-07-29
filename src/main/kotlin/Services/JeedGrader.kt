@@ -43,15 +43,14 @@ suspend fun loadCases(testName: String): String {
     return loadFileAsString(pathName)
 }
 
-suspend fun jeedTest() {
+suspend fun jeedTest(studentSolution: String): List<JeedExecutionLine> {
     val mapper = jacksonObjectMapper() // TODO: Accept as param
 
     val framework = loadFramework()
     val cases = loadCases("perilous-palindromes")
-    val studentSolution = "\n\nfun palindrome(str: String?) : Boolean {\n return false\n }\n" //TODO: accept MIME value
-    val sampleCodeBody = framework + studentSolution + cases
-    println(sampleCodeBody)
-//    val sampleCodeBody = "fun main() = println(42)"
+    val sampleCodeBody = "\n $framework \n\n $studentSolution \n\n $cases \n" //TODO: Give jeed many files
+//    println(sampleCodeBody)
+
     val client = HttpClient()
 
     // TODO: use jeed directly as a library
@@ -69,4 +68,6 @@ suspend fun jeedTest() {
     val processedJeedResponse: JeedResponse = mapper.readValue(jeedResponse)
     val execLines = processedJeedResponse.completed.execution.outputLines
     execLines.forEach { println(it.line) }
+
+    return execLines
 }

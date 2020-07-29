@@ -1,6 +1,7 @@
 package hello
 
 import Services.*
+import com.fasterxml.jackson.databind.SerializationFeature
 import hello.Services.jeedTest
 import io.ktor.application.Application
 import io.ktor.application.call
@@ -56,10 +57,18 @@ data class LoginRequest(val email: String, val password: String)
 data class UpdateGradebookRequest(val classroom_id: String, val student_id : String, val assignment_id : String,
                                   val pointsScored : Double, val pointsTotal : Double)
 
+data class GradeJob(val submit: String)
+
+data class Request (
+    val id : String,
+    val quantity: Int,
+    val isTrue: Boolean
+)
+
 fun Application.api() { // Extension function for Application called adder()
     install(ContentNegotiation) {
         jackson {
-            // Configure Jackson's ObjectMapper here
+            enable(SerializationFeature.INDENT_OUTPUT)
         }
     }
 
@@ -78,6 +87,12 @@ fun Application.api() { // Extension function for Application called adder()
         // Test
         get("/") {
             call.respondText(hello())
+        }
+
+        // To test if post end point is working
+        post("/"){
+            val request = call.receive<Request>()
+            call.respond(request)
         }
 
         // Retrieves data from a firestore document
@@ -232,8 +247,6 @@ fun Application.api() { // Extension function for Application called adder()
             var testFile: File? = null
             var testDirectory: String? = null
 
-            jeedTest()
-
             // Make a directory for the files
             val path = "src/main/kotlin/Grading/$studentID"
             "mkdir $path".runCommand()
@@ -294,6 +307,17 @@ fun Application.api() { // Extension function for Application called adder()
                     Results(listOf("Something went wrong! Either invalid file type no test file uploaded by teacher."), listOf(0.0, 1.0))
                 )
             }
+        }
+
+        // Jeed test user solutions
+        post("/api/jtest/{student_id}") {
+            val studentID: String = call.parameters["student_id"] ?: "INVALID"
+            val toGrade = call.receive<GradeJob>();
+            println(toGrade.submit)
+            println("still working")
+            val resultLines = jeedTest(toGrade.submit)
+            println("jeed test ran for $studentID")
+            call.respond(resultLines)
         }
     }
 }

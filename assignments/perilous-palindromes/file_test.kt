@@ -24,6 +24,6 @@ fun main() {
     )
 
     val (earned, total) = sumScore(cases)
-    println(earned)
-    println(total)
+    println("Earned: $earned")
+    println("Total: $total")
 }
