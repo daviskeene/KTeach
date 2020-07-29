@@ -9,8 +9,8 @@ fun palindrome(str: String?) : Boolean {
 	return true
 }
 
-fun main() {
+//fun main() {
     // Test your code here
     //    palindrome("racecar") // should return true
     //    palindrome("davis keene") // should return false   
-}
+//}

@@ -1,3 +1,5 @@
+import java.lang.Exception
+
 data class TestResult(var score: Double, var maxScore: Double)
 
 data class Case(val name: String, val weight: Double = 1.0, val code: () -> Boolean) {
@@ -30,4 +32,9 @@ fun sumScore(cases: List<Case>): Pair<Double, Double> {
 fun computeScore(cases: List<Case>): Double {
     val (score, total) = sumScore(cases)
     return 100 * (score / total)
+}
+
+fun displayFinalResult(earned: Double, total: Double) {
+    println("Earned: $earned")
+    println("Total: $total")
 }

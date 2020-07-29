@@ -20,6 +20,6 @@ Viruses should also have a method called infect() that increases their number of
 // Declare your data class below
 // data class Virus()
 
-fun main() {
+//fun main() {
     // Test your data class here
-}
+//}
