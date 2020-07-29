@@ -57,7 +57,10 @@ data class LoginRequest(val email: String, val password: String)
 data class UpdateGradebookRequest(val classroom_id: String, val student_id : String, val assignment_id : String,
                                   val pointsScored : Double, val pointsTotal : Double)
 
-data class GradeJob(val submit: String)
+data class GradeJob(
+    val submit: String,
+    val testName: String
+)
 
 data class Request (
     val id : String,
@@ -310,12 +313,12 @@ fun Application.api() { // Extension function for Application called adder()
         }
 
         // Jeed test user solutions
-        post("/api/jtest/{student_id}") {
+        post("/api/jtest/{student_id}}") {
             val studentID: String = call.parameters["student_id"] ?: "INVALID"
             val toGrade = call.receive<GradeJob>();
             println(toGrade.submit)
             println("still working")
-            val resultLines = jeedTest(toGrade.submit)
+            val resultLines = jeedTest(toGrade.submit, toGrade.testName)
             println("jeed test ran for $studentID")
             call.respond(resultLines)
         }

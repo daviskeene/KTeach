@@ -43,11 +43,11 @@ suspend fun loadCases(testName: String): String {
     return loadFileAsString(pathName)
 }
 
-suspend fun jeedTest(studentSolution: String): List<JeedExecutionLine> {
+suspend fun jeedTest(studentSolution: String, testName: String): List<JeedExecutionLine> {
     val mapper = jacksonObjectMapper() // TODO: Accept as param
 
     val framework = loadFramework()
-    val cases = loadCases("perilous-palindromes")
+    val cases = loadCases(testName)
     val sampleCodeBody = "\n $framework \n\n $studentSolution \n\n $cases \n" //TODO: Give jeed many files
 //    println(sampleCodeBody)
 
