@@ -6,7 +6,7 @@ The palindromes are NOT case sensitive.
 fun palindrome(str: String?) : Boolean {
     // Your method declaration should go here, and return the palindrome as a String.
     // Remember: can String be null according to the function declaration?	
-
+	return true
 }
 
 fun main() {
