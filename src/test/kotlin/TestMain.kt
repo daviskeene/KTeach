@@ -7,12 +7,12 @@ import io.ktor.server.testing.handleRequest
 import io.ktor.server.testing.setBody
 import io.ktor.server.testing.withTestApplication
 
-class TestMain : StringSpec({
-    "should retrieve root path properly" {
-        withTestApplication(Application::api) {
-            handleRequest(HttpMethod.Get, "/add/1/2").apply {
-                response.status() shouldBe HttpStatusCode.OK
-            }
-        }
-    }
-})
+//class TestMain : StringSpec({
+//    "should retrieve root path properly" {
+//        withTestApplication(Application::api) {
+//            handleRequest(HttpMethod.Get, "/add/1/2").apply {
+//                response.status() shouldBe HttpStatusCode.OK
+//            }
+//        }
+//    }
+//})

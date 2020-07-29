@@ -1,6 +1,7 @@
 package hello
 
 import Services.*
+import hello.Services.jeedTest
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
@@ -230,6 +231,8 @@ fun Application.api() { // Extension function for Application called adder()
             var studentID = call.parameters["student_id"]!!
             var testFile: File? = null
             var testDirectory: String? = null
+
+            jeedTest()
 
             // Make a directory for the files
             val path = "src/main/kotlin/Grading/$studentID"
